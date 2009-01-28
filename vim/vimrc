@@ -1,0 +1,75 @@
+"========== Brian Park's vimrc Setup ==========
+"* Last Modified : May 26, 2006
+"==============================================
+
+"========== General ==========
+set nocompatible                "get out of VI's compatible mode
+set shell=bash                  "set shell to be bash
+set autoread                    "Set to auto read when a file is changed from the outside
+set mouse=a                     "Have the mouse enabled all the time
+set bs=2                        " allow backspacing over everything in insert mode
+
+set viminfo='20,\"50            " read/write a .viminfo file, don't store more
+set history=50
+
+"========== Enable filetype plugin ==========
+filetype on
+filetype plugin on
+"filetype indent on
+
+"========== User Interface ==========
+set nu                          "show line number
+set ruler
+set showcmd
+set showmode
+set cmdheight=2                 "the commandbar is 2 high
+set wildmenu                    "turn on WiLd menu
+
+set background=light            "dark is recommended for black background
+syntax on
+
+"========== Highlight search things ==========
+set hlsearch
+set incsearch
+
+"========== Ignore case when searching ==========
+set ignorecase
+set smartcase
+
+"========== Indentation ==========
+"set cindent
+"set autoindent
+"set smartindent
+
+"========== Text Options ==========
+set smarttab
+set expandtab
+set softtabstop=4
+set tabstop=4                   " Tab space
+set shiftwidth=4                " Indentation space
+"set textwidth=79               " Automatically change the line after 79th character
+
+"========== Function Keys Mapping ==========
+map <F2> :w<CR>
+map <F9> :nohls<CR>
+"map J <C-w>j                   " moving to the upper window in command mode
+"map K <C-w>k                   " moving to the lower window in command mode
+
+"========== Unorganized ==========
+"Do not redraw, when running macros.. lazyredraw
+set lz
+
+"Set backspace
+set backspace=eol,start,indent
+
+"Bbackspace and cursor keys wrap to
+set whichwrap+=<,>,h,l
+
+"Set magic on
+set magic
+
+"show matching bracets
+set showmatch
+
+"How many tenths of a second to blink
+set mat=2
