@@ -7,6 +7,9 @@
 (add-hook 'python-mode-hook 'hl-line-mode)
 (add-hook 'haskell-mode-hook 'hl-line-mode)
 
+;; c-mode and c++-mode
+(load "~/.emacs.d/modes/xcscope")
+
 ;; javascript-mode
 (load "~/.emacs.d/modes/javascript-mode")
 (add-to-list 'auto-mode-alist '("\\.js$" . javascript-mode))
