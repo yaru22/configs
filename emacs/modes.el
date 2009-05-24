@@ -22,11 +22,10 @@
 ;; c-mode and c++-mode
 ;; http://www.chemie.fu-berlin.de/chemnet/use/info/cc-mode/cc-mode_6.html
 (load "~/.emacs.d/modes/xcscope")
-(add-hook 'c-mode-hook
+(add-hook 'c-mode-common-hook
   (lambda ()
     (c-set-style "cc-mode")
     (c-set-offset 'substatement-open 0)))
-(add-hook 'c++-mode-hook c-mode-hook)
 
 ;; javascript-mode
 (load "~/.emacs.d/modes/javascript-mode")
