@@ -1,5 +1,8 @@
 (add-to-list 'load-path "~/.emacs.d/modes/")
 
+;; no tab
+(setq-default indent-tabs-mode nil)
+
 ;; auto-complete modes
 (load "~/.emacs.d/modes/auto-complete.el")
 (load "~/.emacs.d/modes/auto-complete-haskell.el")
