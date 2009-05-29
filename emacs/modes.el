@@ -27,6 +27,10 @@
     (c-set-style "cc-mode")
     (c-set-offset 'substatement-open 0)))
 
+;; css-mode
+(load "~/.emacs.d/modes/css-mode")
+(add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
+
 ;; javascript-mode
 (load "~/.emacs.d/modes/javascript-mode")
 (add-to-list 'auto-mode-alist '("\\.js$" . javascript-mode))
