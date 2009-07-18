@@ -1,7 +1,8 @@
 (add-to-list 'load-path "~/.emacs.d/modes/")
 
 ;; no tab
-(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode t)
 
 ;; auto-complete modes
 (load "~/.emacs.d/modes/auto-complete.el")
@@ -12,6 +13,7 @@
 (add-hook 'emacs-lisp-mode-hook 'hl-line-mode)
 (add-hook 'c-mode-hook 'hl-line-mode)
 (add-hook 'c++-mode-hook 'hl-line-mode)
+(add-hook 'objc-mode-hook 'hl-line-mode)
 (add-hook 'javascript-mode-hook 'hl-line-mode)
 (add-hook 'python-mode-hook 'hl-line-mode)
 (add-hook 'haskell-mode-hook 'hl-line-mode)
@@ -40,3 +42,13 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-font-lock)
+
+;; scala-mode
+(add-to-list 'load-path "~/.emacs.d/modes/scala-mode/")
+(require 'scala-mode-auto)
+
+(setq yas/scala-dir "~/.emacs.d/modes/scala-mode/contrib/yasnippet/snippets")
+(yas/load-directory yas/scala-dir)
+(add-hook 'scala-mode-hook
+		  '(lambda ()
+			 (yas/minor-mode-on)))

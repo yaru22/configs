@@ -8,6 +8,7 @@
 (global-set-key [f2 ?s] 'term)
 (global-set-key [f2 f2] 'kill-buffer)
 (global-set-key [f2 ?l] 'setnu-mode)
+(global-set-key [f2 ?i] 'indent-buffer)
 
 ;; F6 sets a bookmark, F7 loads the list of bookmarks
 (global-set-key [f6] 'bookmark-set)

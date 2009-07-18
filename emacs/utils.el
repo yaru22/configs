@@ -1,6 +1,7 @@
 (add-to-list 'load-path "~/.emacs.d/utils/")
 
 (load "~/.emacs.d/utils/dos2unix")
+(load "~/.emacs.d/utils/indent-buffer")
 (load "~/.emacs.d/utils/setnu")
 
 ;; Yet Another Snippet (yasnippet)
