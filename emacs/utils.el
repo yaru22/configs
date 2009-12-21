@@ -4,11 +4,6 @@
 (load "~/.emacs.d/utils/indent-buffer")
 (load "~/.emacs.d/utils/setnu")
 
-;; Yet Another Snippet (yasnippet)
-(add-to-list 'load-path "~/.emacs.d/utils/yasnippet")
-(require 'yasnippet) ;; not yasnippet-bundle
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/utils/yasnippet/snippets")
 
 ;; More powerful tab-completion
 (add-hook 'minibuffer-setup-hook
