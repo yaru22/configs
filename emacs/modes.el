@@ -1,4 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/modes/")
+(add-to-list 'load-path "~/.emacs.d/modes/ghc-mod/")
 
 ;; no tab
 (setq-default tab-width 4)
@@ -33,4 +34,7 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . javascript-mode))
 
 ;; haskell-mode
+(add-to-list 'exec-path "~/.cabal/bin/")
 (require 'inf-haskell)
+(autoload 'ghc-init "ghc" nil t)
+(add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))

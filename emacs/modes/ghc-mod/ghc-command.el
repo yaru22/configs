@@ -8,19 +8,19 @@
 
 ;;; Code:
 
-(provide 'ghc-flymake)
+(require 'ghc-flymake)
 
 (defun ghc-insert-template ()
   (interactive)
   (cond
    ((bobp)
     (ghc-insert-module-template))
+   ((ghc-flymake-have-errs-p)
+    (ghc-flymake-insert-from-warning))
    ((save-excursion
       (beginning-of-line)
       (looking-at "^[^ ]+ *::"))
     (ghc-insert-function-template))
-   ((ghc-flymake-have-errs-p)
-    (ghc-flymake-insert-from-warning))
    (t
     (message "Nothing to be done"))))
 

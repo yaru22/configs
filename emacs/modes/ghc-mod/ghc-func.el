@@ -8,7 +8,8 @@
 
 ;;; Code:
 
-(defvar ghc-module-command "ghc-mod")
+(defvar ghc-module-command "ghc-mod"
+"*The command name of \"ghc-mod\"")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -78,6 +79,11 @@
 	  (dotimes (i n (nreverse ret))
 	    (ghc-add ret (read m))))
       (error ()))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun ghc-mapconcat (func list)
+  (apply 'append (mapcar func list)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
