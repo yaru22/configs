@@ -31,10 +31,17 @@
 
 ;; javascript-mode
 (load "~/.emacs.d/modes/javascript-mode")
-(add-to-list 'auto-mode-alist '("\\.js$" . javascript-mode))
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;; haskell-mode
 (add-to-list 'exec-path "~/.cabal/bin/")
 (require 'inf-haskell)
 (autoload 'ghc-init "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
+
+;; scala-mode
+(add-to-list 'load-path "/usr/local/scala/misc/scala-tool-support/emacs")
+(require 'scala-mode-auto)
+(setq yas/my-directory "/usr/local/scala/misc/scala-tool-support/emacs/contrib/yasnippet/snippets")
+
+
