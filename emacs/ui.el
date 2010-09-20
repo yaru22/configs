@@ -3,6 +3,9 @@
 (column-number-mode 1)
 (display-time-mode 1)
 
+;; Disabling Emacs splashscreen
+(setq inhibit-splash-screen t)
+
 (setq x-select-enable-clipboard t)
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
