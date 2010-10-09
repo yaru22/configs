@@ -1,32 +1,25 @@
+;; Add various utils to the load-path
 (add-to-list 'load-path "~/.emacs.d/utils/")
 
+;; Load useful utilities
 (load "~/.emacs.d/utils/dos2unix")
 (load "~/.emacs.d/utils/indent-buffer")
-(load "~/.emacs.d/utils/setnu")
 
-;; installing yasnippet
+;; Installing yasnippet
 (add-to-list 'load-path
                   "~/.emacs.d/plugins/yasnippet-0.6.1c")
     (require 'yasnippet) ;; not yasnippet-bundle
     (yas/initialize)
     (yas/load-directory "~/.emacs.d/plugins/yasnippet-0.6.1c/snippets")
 
-;; More powerful tab-completion
-(add-hook 'minibuffer-setup-hook
-          '(lambda ()
-             (define-key minibuffer-local-map "\t" 'comint-dynamic-complete)))
-
-
 ;; Find file at point lets you put the point over a file name and open
 ;; it with C-x C-f
 (ffap-bindings)
 
-
-;; occur-mode
+;; Occur-mode
 (global-set-key (kbd "C-c C-o") 'occur)
 (define-key occur-mode-map "n" 'next-error-no-select)
 (define-key occur-mode-map "p" 'previous-error-no-select)
-
 
 ;; C-o is occur in isearch
 (defun isearch-occur ()
@@ -37,7 +30,6 @@
 
 (define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
 
-
 ;; C-k is "kill match" in isearch
 (defun kill-isearch-match ()
   "Kill the current isearch match string and continue searching."
@@ -45,7 +37,6 @@
   (kill-region isearch-other-end (point)))
 
 (define-key isearch-mode-map (kbd "C-k") 'kill-isearch-match)
-
 
 ;; Increment the number at point
 (defun increment-number-at-point (&optional arg)

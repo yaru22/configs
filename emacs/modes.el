@@ -1,26 +1,10 @@
+;; Add various modes to the load-path
 (add-to-list 'load-path "~/.emacs.d/modes/")
 (add-to-list 'load-path "~/.emacs.d/modes/ghc-mod/")
 
-;; no tab
+;; No tab
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
-
-;; auto-complete modes
-(load "~/.emacs.d/modes/auto-complete.el")
-(load "~/.emacs.d/modes/auto-complete-haskell.el")
-
-;; hl-line-mode to all the programming modes
-(add-hook 'c-mode-hook 'hl-line-mode)
-(add-hook 'c++-mode-hook 'hl-line-mode)
-(add-hook 'css-mode-hook 'hl-line-mode)
-(add-hook 'emacs-lisp-mode-hook 'hl-line-mode)
-(add-hook 'haskell-mode-hook 'hl-line-mode)
-(add-hook 'javascript-mode-hook 'hl-line-mode)
-(add-hook 'lisp-mode-hook 'hl-line-mode)
-(add-hook 'objc-mode-hook 'hl-line-mode)
-(add-hook 'python-mode-hook 'hl-line-mode)
-(add-hook 'scala-mode-hook 'hl-line-mode)
-(add-hook 'sgml-mode-hook 'hl-line-mode)
 
 ;; c-mode and c++-mode
 ;; http://www.chemie.fu-berlin.de/chemnet/use/info/cc-mode/cc-mode_6.html
@@ -31,7 +15,7 @@
     (c-set-offset 'substatement-open 0)))
 
 ;; javascript-mode
-(load "~/.emacs.d/modes/javascript-mode")
+(autoload 'js2-mode "js2.elc" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;; haskell-mode

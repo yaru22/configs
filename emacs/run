@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Byte compile all the elisp files under this directory
+find . -name "*.el" | awk '{print "(byte-compile-file \"" $1 "\")"; }' > byte-compile-me.el
+emacs -batch -l byte-compile-me.el -kill
+rm byte-compile-me.el*
