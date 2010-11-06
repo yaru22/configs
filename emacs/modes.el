@@ -30,4 +30,4 @@
 (setq yas/my-directory "/usr/local/scala/misc/scala-tool-support/emacs/contrib/yasnippet/snippets")
 
 ;; Activate Emacs Code Browser manually since ecb-auto-activate doesn't seem to work
-(ecb-activate)
+;; (ecb-activate)
