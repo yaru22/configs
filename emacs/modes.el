@@ -12,5 +12,8 @@
     (c-set-style "cc-mode")
     (c-set-offset 'substatement-open 0)))
 
+;; Lua mode
+(setq lua-indent-level 2)
+
 ;; Activate Emacs Code Browser manually since ecb-auto-activate doesn't seem to work
 ;; (ecb-activate)
