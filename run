@@ -8,3 +8,4 @@ ln -s $CUR_DIR/emacs ~/.emacs.d
 ln -s $CUR_DIR/gem/gemrc ~/.gemrc
 ln -s $CUR_DIR/git/gitconfig ~/.gitconfig
 ln -s $CUR_DIR/vim/vimrc ~/.vimrc
+ln -s $CUR_DIR/zsh/zshrc ~/.zshrc
