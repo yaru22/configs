@@ -5,5 +5,6 @@ CUR_DIR=`pwd`
 # Setup soft links to the configuration files.
 ln -s $CUR_DIR/emacs/emacs.el ~/.emacs
 ln -s $CUR_DIR/emacs ~/.emacs.d
+ln -s $CUR_DIR/gem/gemrc ~/.gemrc
 ln -s $CUR_DIR/git/gitconfig ~/.gitconfig
 ln -s $CUR_DIR/vim/vimrc ~/.vimrc
