@@ -9,3 +9,4 @@ ln -s $CUR_DIR/gem/gemrc ~/.gemrc
 ln -s $CUR_DIR/git/gitconfig ~/.gitconfig
 ln -s $CUR_DIR/vim/vimrc ~/.vimrc
 ln -s $CUR_DIR/zsh/zshrc ~/.zshrc
+ln -s $CUR_DIR/zsh/zsh_aliases ~/.zsh_aliases
