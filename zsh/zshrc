@@ -10,7 +10,7 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-. ~/.zsh_aliases
+source ~/.zsh_aliases
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -30,13 +30,34 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails ruby)
+plugins=(gem git rails ruby rvm)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-# TODO: Turn each path to PATH=<path>:$PATH so that it's easy to add and delete.
-export PATH=$HOME/workspace/play:$HOME/workspace/android-ndk-r7:$HOME/workspace/android-ndk-r7/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin:$HOME/workspace/android-sdk-linux_x86/tools:$HOME/workspace/android-sdk-linux_x86/platform-tools:$HOME/.cabal/bin:$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+# Essential paths
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+# LightDM is the default X display manager for Ubuntu 11.10.
+PATH=/usr/lib/lightdm/lightdm:$PATH
+
+# Custom scripts in $HOME/bin directory.
+PATH=$HOME/bin:$PATH
+
+# Haskell cabal
+PATH=$HOME/.cabal/bin:$PATH
+
+# Android ndk
+PATH=$HOME/workspace/android-ndk-r7:$HOME/workspace/android-ndk-r7/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin:$PATH
+
+# Android sdk
+PATH=$HOME/workspace/android-sdk-linux_x86/tools:$HOME/workspace/android-sdk-linux_x86/platform-tools:$PATH
+
+# Play framework
+PATH=$HOME/workspace/play:$PATH
+
+# RVM
+PATH=$HOME/.rvm/bin:$PATH
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
