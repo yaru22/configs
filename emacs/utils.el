@@ -1,3 +1,13 @@
+;; Enable Emacs Lisp Package Archive (ELPS) for Emacs 22/23
+(let ((buffer (url-retrieve-synchronously
+	       "http://tromey.com/elpa/package-install.el")))
+  (save-excursion
+    (set-buffer buffer)
+    (goto-char (point-min))
+    (re-search-forward "^$" nil 'move)
+    (eval-region (point) (point-max))
+    (kill-buffer (current-buffer))))
+
 ;; Add various utils to the load-path
 (add-to-list 'load-path "~/.emacs.d/utils/")
 
