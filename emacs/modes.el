@@ -26,5 +26,8 @@
 ;; Lua mode
 (setq lua-indent-level 2)
 
+;; Tramp default method
+(setq tramp-default-method "ssh")
+
 ;; Activate Emacs Code Browser manually since ecb-auto-activate doesn't seem to work
 ;; (ecb-activate)
