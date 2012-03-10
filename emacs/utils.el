@@ -1,4 +1,4 @@
-;; Enable Emacs Lisp Package Archive (ELPS) for Emacs 22/23
+;; Enable Emacs Lisp Package Archive (ELPA) for Emacs 22/23
 (let ((buffer (url-retrieve-synchronously
 	       "http://tromey.com/elpa/package-install.el")))
   (save-excursion
