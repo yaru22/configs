@@ -15,13 +15,13 @@
 ;; flymake-jshint mode
 ;; This requires that you have jshint-mode (run "npm install jshint-mode")
 ;; https://github.com/daleharvey/jshint-mode
-(add-to-list 'load-path "~/node_modules/jshint-mode")
-(require 'flymake-jshint)
-(add-hook 'javascript-mode-hook
-    (lambda () (flymake-mode t)))
+;; (add-to-list 'load-path "~/node_modules/jshint-mode")
+;; (require 'flymake-jshint)
+;; (add-hook 'javascript-mode-hook
+;;     (lambda () (flymake-mode t)))
 
 ;; Turns on flymake for all files which have a flymake mode
-(add-hook 'find-file-hook 'flymake-find-file-hook)
+;; (add-hook 'find-file-hook 'flymake-find-file-hook)
 
 ;; Lua mode
 (setq lua-indent-level 2)
