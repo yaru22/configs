@@ -2,7 +2,7 @@
 (add-to-list 'load-path "~/.emacs.d/modes/")
 
 ;; No tab
-(setq-default tab-width 4)
+(setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 
 ;; c-mode and c++-mode
@@ -28,7 +28,6 @@
 
 ;; Coffee script mode
 (require 'coffee-mode)
-(custom-set-variables '(coffee-tab-width 2))
 
 ;; Tramp default method
 (setq tramp-default-method "ssh")
