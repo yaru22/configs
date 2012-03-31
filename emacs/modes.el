@@ -26,6 +26,10 @@
 ;; Lua mode
 (setq lua-indent-level 2)
 
+;; Coffee script mode
+(require 'coffee-mode)
+(custom-set-variables '(coffee-tab-width 2))
+
 ;; Tramp default method
 (setq tramp-default-method "ssh")
 
