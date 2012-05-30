@@ -56,6 +56,10 @@ PATH=$HOME/workspace/android-sdk-linux_x86/tools:$HOME/workspace/android-sdk-lin
 # Play framework
 PATH=$HOME/workspace/play:$PATH
 
+# Node.js
+export NODE_PATH=/usr/local/lib/node_modules:$HOME/node_modules
+PATH=~/node_modules/.bin:$PATH
+
 # RVM
 PATH=$HOME/.rvm/bin:$PATH
 
