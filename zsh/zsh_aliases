@@ -1,3 +1,4 @@
+# Aliases and useful functions
 alias b='cd ../'
 alias bb='cd ../../'
 alias bbb='cd ../../../'
@@ -9,3 +10,6 @@ alias cdw='cd ~/workspace'
 alias rmts='find . -name \*.h -or -name \*.m | xargs sed -i "" "s/ $//g"'
 alias sshl='ssh brian@linode'
 
+function goto_bundle() {
+  cd `bundle show $1`
+}
