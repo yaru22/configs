@@ -32,6 +32,9 @@
 ;; Coffee script mode
 (require 'coffee-mode)
 
+;; Less CSS mode
+(require 'less-css-mode)
+
 ;; Tramp default method
 (setq tramp-default-method "ssh")
 
