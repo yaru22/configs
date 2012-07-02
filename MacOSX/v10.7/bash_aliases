@@ -1,0 +1,16 @@
+alias bp='. ~/.bash_profile'
+alias b='cd ../'
+alias bb='cd ../../'
+alias bbb='cd ../../../'
+alias bbbb='cd ../../../../'
+alias bbbbb='cd ../../../../../'
+alias be='bundle exec'
+alias bea='bundle exec annotate --position before'
+alias cdw='cd ~/workspace'
+alias rmts='find . -name \*.h -or -name \*.m -or -name \*.rb -or -name \*.js -or -name \*.coffee | xargs sed -i "" "s/ $//g"'
+alias sshl='ssh brian@linode'
+alias sshw='ssh wakie@wakietalkie.cloudapp.net'
+
+function goto_bundle() {
+  cd `bundle show $1`
+}

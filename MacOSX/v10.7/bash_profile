@@ -1,0 +1,35 @@
+#
+# Colorful Terminal
+#
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+#
+# Aliases
+#
+source ~/.bash_aliases
+
+#
+# Android
+#
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20
+export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r8
+PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+
+#
+# Node.js
+#
+export NODE_PATH=/usr/local/lib/node_modules:~/node_modules
+PATH=~/node_modules/.bin:$PATH
+
+#
+# Ruby
+#
+# This loads RVM into a shell session.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+#
+# PHP
+#
+PATH=~/workspace/pear/bin:$PATH
+
