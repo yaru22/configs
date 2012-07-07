@@ -12,6 +12,13 @@
     (c-set-style "cc-mode")
     (c-set-offset 'substatement-open 0)))
 
+;; Haskell mode
+(load "~/.emacs.d/modes/haskell-mode/haskell-site-file")
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
+
 ;; Javascript mode
 (setq js-indent-level 2)
 
