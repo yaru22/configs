@@ -23,13 +23,13 @@ export NODE_PATH=/usr/local/lib/node_modules:~/node_modules
 PATH=~/node_modules/.bin:$PATH
 
 #
+# PHP
+#
+PATH=~/workspace/pear/bin:$PATH
+
+#
 # Ruby
 #
 # This loads RVM into a shell session.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-#
-# PHP
-#
-PATH=~/workspace/pear/bin:$PATH
 
