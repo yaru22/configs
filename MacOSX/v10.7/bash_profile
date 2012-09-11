@@ -17,6 +17,11 @@ export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r8
 PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 #
+# Cocos2d-X
+#
+export COCOS2DX_HOME=~/workspace/cocos2d-x
+
+#
 # Node.js
 #
 export NODE_PATH=/usr/local/lib/node_modules:~/node_modules
