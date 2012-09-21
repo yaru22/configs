@@ -19,7 +19,10 @@ PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 #
 # Cocos2d-X
 #
+export NDK_ROOT=$ANDROID_NDK_ROOT
 export COCOS2DX_HOME=~/workspace/cocos2d-x
+# core dump for Android cocos2d-x project
+alias ndkdump='adb logcat | $NDK_ROOT/ndk-stack -sym obj/local/armeabi/'
 
 #
 # Node.js
