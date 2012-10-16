@@ -100,7 +100,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>374 201 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 19 1438 859 0 0 1440 878 </string>
+	<string>0 36 1228 842 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1017,7 +1017,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>ssh -i /Users/brianpark/Dropbox/Documents/aws-brianpark.pem ubuntu@54.243.216.202</string>
+			<string>ssh -i /Users/brianpark/Dropbox/Documents/aws-brianpark.pem ubuntu@aws</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1741,7 +1741,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>ssh brian@97.107.129.126</string>
+			<string>ssh brian@linode</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2342,7 +2342,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2012-10-15T14:21:59Z</date>
+	<date>2012-10-16T14:21:58Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
