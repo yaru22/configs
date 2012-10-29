@@ -42,6 +42,9 @@
 ;; Less CSS mode
 (require 'less-css-mode)
 
+;; HTML mode for .tmpl files
+(add-to-list 'auto-mode-alist '("\\.tmpl$" . html-mode))
+
 ;; Tramp default method
 (setq tramp-default-method "ssh")
 
