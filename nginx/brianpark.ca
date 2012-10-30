@@ -1,0 +1,115 @@
+server {
+    listen 80;
+    server_name brianpark.ca;
+    rewrite ^ $scheme://www.brianpark.ca$request_uri permanent;
+}
+
+server {
+    listen 80;
+    server_name blogs.brianpark.ca;
+    server_name_in_redirect off;
+
+    access_log /srv/www/brianpark.ca/logs/blogs.access.log;
+    error_log /srv/www/brianpark.ca/logs/blogs.error.log;
+
+    root /srv/www/brianpark.ca/public/blogs;
+    index index.php;
+
+    try_files $uri $uri/ /index.php?q=$uri&$args;
+
+    # Serve an empty 1x1 gif _OR_ an error 204 for favicon.ico
+    location = /favicon.ico {
+        empty_gif;
+        #return 204;
+    }
+
+    location = / {
+        rewrite ^/$ $scheme://www.brianpark.ca/blogs.html permanent;
+    }
+
+    # rewriting uploaded files
+    rewrite ^/(.+/)?files/(.+) /wp-includes/ms-files.php?file=$2 last;
+
+    # add a trailing slash to /wp-admin
+    rewrite ^/(.+/)?wp-admin$ /$1wp-admin/ permanent;
+
+    if (!-e $request_filename) {
+        rewrite ^/(.+/)?(wp-(content|admin|includes).*) /$2 last;
+        rewrite ^/(.+/)?(.*\.php)$ /$2 last;
+    }
+
+    location ~ \.php$ {
+        include /etc/nginx/fastcgi_params;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME /srv/www/brianpark.ca/public/blogs$fastcgi_script_name;
+    }
+
+    # static assets
+    location ~* ^.+\.(manifest)$ {
+        access_log /srv/www/brianpark.ca/logs/blogs.static.log; 
+    }
+
+    location ~* ^.+\.(ico|ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|css|rss|atom|js|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {
+        # only set expires max IFF the file is a static file and exists
+        if (-f $request_filename) {
+            expires max;
+            access_log /srv/www/brianpark.ca/logs/blogs.static.log; 
+        }
+    }
+}
+
+server {
+    listen 80;
+    server_name www.brianpark.ca;
+    expires 1d;
+
+    access_log /srv/www/brianpark.ca/logs/access.log;
+    error_log /srv/www/brianpark.ca/logs/error.log;
+
+    root /srv/www/brianpark.ca/public/main;
+    index index.html;
+
+    try_files $uri $uri/ index.html;
+
+    # Serve an empty 1x1 gif _OR_ an error 204 for favicon.ico
+    location = /favicon.ico {
+        empty_gif;
+        #return 204;
+    }
+
+    # static assets
+    location ~* ^.+\.(manifest)$ {
+        access_log /srv/www/brianpark.ca/logs/www.static.log; 
+    }
+
+    location ~* ^.+\.(ico|ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|css|rss|atom|js|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {
+        # only set expires max IFF the file is a static file and exists
+        if (-f $request_filename) {
+            expires max;
+            access_log /srv/www/brianpark.ca/logs/www.static.log; 
+        }
+    }
+}
+
+server {
+  listen 80;
+  server_name node.brianpark.ca;
+
+  access_log /srv/www/brianpark.ca/logs/node-access.log;
+  error_log /srv/www/brianpark.ca/logs/node-error.log;
+
+  location / {
+      proxy_pass              http://127.0.0.1:3000;
+      proxy_redirect          off;
+      proxy_set_header        Host            $host;
+      proxy_set_header        X-Real-IP       $remote_addr;
+      proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+      client_max_body_size    10m;
+      client_body_buffer_size 128k;
+      proxy_connect_timeout   90;
+      proxy_send_timeout      90;
+      proxy_read_timeout      90;
+      proxy_buffers           32 4k;
+  }
+}
