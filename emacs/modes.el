@@ -42,6 +42,10 @@
 ;; Less CSS mode
 (require 'less-css-mode)
 
+;; SASS CSS mode
+(require 'sass-mode)
+(add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
+
 ;; HTML mode for .tmpl files
 (add-to-list 'auto-mode-alist '("\\.tmpl$" . html-mode))
 
