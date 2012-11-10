@@ -1,8 +1,10 @@
 {
-	"auto_upgrade_last_run": 1352565184,
+	"auto_upgrade_last_run": 1352580587,
 	"installed_packages":
 	[
 		"Handlebars",
-		"SyncedSideBar"
+		"Package Control",
+		"SyncedSideBar",
+		"ZenCoding"
 	]
 }
