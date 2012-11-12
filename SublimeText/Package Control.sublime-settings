@@ -1,9 +1,11 @@
 {
-	"auto_upgrade_last_run": 1352703164,
+	"auto_upgrade_last_run": 1352747222,
 	"installed_packages":
 	[
 		"AdvancedNewFile",
 		"Alignment",
+		"ColorPicker",
+		"DocBlockr",
 		"Handlebars",
 		"Package Control",
 		"SideBarEnhancements",
