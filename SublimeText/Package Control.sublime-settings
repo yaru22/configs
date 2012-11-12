@@ -1,9 +1,13 @@
 {
-	"auto_upgrade_last_run": 1352580587,
+	"auto_upgrade_last_run": 1352703164,
 	"installed_packages":
 	[
+		"AdvancedNewFile",
+		"Alignment",
 		"Handlebars",
 		"Package Control",
+		"SideBarEnhancements",
+		"SublimeLinter",
 		"SyncedSideBar",
 		"ZenCoding"
 	]
