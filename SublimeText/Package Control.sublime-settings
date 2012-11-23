@@ -1,13 +1,17 @@
 {
-	"auto_upgrade_last_run": 1352747222,
+	"auto_upgrade_last_run": 1353683848,
 	"installed_packages":
 	[
 		"AdvancedNewFile",
 		"Alignment",
+		"Auto Semi-Colon",
+		"BracketHighlighter",
 		"ColorPicker",
 		"DocBlockr",
 		"Handlebars",
+		"Nodejs",
 		"Package Control",
+		"SCSS",
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SyncedSideBar",

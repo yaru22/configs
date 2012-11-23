@@ -1,0 +1,21 @@
+<snippet>
+  <content><![CDATA[
+var ${1:TaskView} = Backbone.Marionette.ItemView.extend({
+  className: '${2}',
+  template: ${3:tmpl},
+
+  events: {
+    ${4}
+  },
+
+  initialize: function() {
+    ${5}
+  }
+});
+
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>bmiv</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope>source.python</scope> -->
+</snippet>
