@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1353683848,
+	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
 		"AdvancedNewFile",
@@ -8,6 +8,7 @@
 		"BracketHighlighter",
 		"ColorPicker",
 		"DocBlockr",
+		"Git",
 		"Handlebars",
 		"Nodejs",
 		"Package Control",
