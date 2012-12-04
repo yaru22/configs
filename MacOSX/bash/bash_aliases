@@ -7,6 +7,9 @@ alias bbbbb='cd ../../../../../'
 alias be='bundle exec'
 alias bea='bundle exec annotate --position before'
 alias cdw='cd ~/workspace'
+alias gp='git pull'
+alias gs='git status'
+alias gd='git diff'
 alias rmts='find . -name \*.h -or -name \*.c -or -name \*.cpp -or -name \*.m -or -name \*.mm -or -name \*.rb -or -name \*.js -or -name \*.coffee | xargs sed -i "" "s/[ ]*$//g"'
 
 function goto_bundle() {
