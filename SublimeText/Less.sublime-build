@@ -1,7 +1,7 @@
 {
     "cmd": ["lessc", "$file", "${file_path}/${file_base_name}.css", "--verbose"],
     "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
-    "selector": ["source.less", "source.css.less"],
+    "selector": "source.css.less",
     "path": "/Users/brianpark/node_modules/.bin:$PATH",
 
     "variants": [
