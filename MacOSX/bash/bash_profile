@@ -12,7 +12,7 @@ source ~/.bash_aliases
 #
 # Android
 #
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21
 export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r8
 PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
@@ -23,6 +23,14 @@ export NDK_ROOT=$ANDROID_NDK_ROOT
 export COCOS2DX_HOME=~/workspace/cocos2d-x
 # core dump for Android cocos2d-x project
 alias ndkdump='adb logcat | $NDK_ROOT/ndk-stack -sym obj/local/armeabi/'
+
+#
+# Git
+#
+# NOTE: brew install git bash-completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
 
 #
 # Node.js
