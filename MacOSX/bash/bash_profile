@@ -33,7 +33,7 @@ PATH=~/node_modules/.bin:$PATH
 #
 # PHP
 #
-PATH=~/workspace/pear/bin:$PATH
+PATH=/Applications/XAMPP/xamppfiles/bin:$PATH
 
 #
 # Ruby
