@@ -41,6 +41,12 @@
 	pager = less -FRSX
 	whitespace = fix, -indent-with-non-tab, trailing-space, cr-at-eol
 
+[difftool]
+	prompt = NO
+
+[difftool "diffmerge"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge $LOCAL $REMOTE
+
 [push]
 	default = tracking
 

@@ -44,6 +44,11 @@ PATH=~/node_modules/.bin:$PATH
 PATH=/Applications/XAMPP/xamppfiles/bin:$PATH
 
 #
+# Python
+#
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+
+#
 # Ruby
 #
 # This loads RVM into a shell session.
