@@ -105,6 +105,17 @@
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
+	<key>NSToolbar Configuration Terminal Toolbar</key>
+	<dict>
+		<key>TB Display Mode</key>
+		<integer>1</integer>
+		<key>TB Icon Size Mode</key>
+		<integer>1</integer>
+		<key>TB Is Shown</key>
+		<integer>0</integer>
+		<key>TB Size Mode</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame Preferences</key>
 	<string>307 363 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -1070,7 +1081,7 @@
 				<real>1</real>
 			</dict>
 			<key>Guid</key>
-			<string>844D69EB-C1F5-4404-8B56-A8D857BF4E64</string>
+			<string>2FFB068B-20AF-4A0A-8A9E-812014118EEF</string>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
@@ -1383,7 +1394,7 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>AWS Personal</string>
+			<string>AWS Paid Personal</string>
 			<key>Non Ascii Font</key>
 			<string>Monaco 12</string>
 			<key>Non-ASCII Anti Aliased</key>
@@ -2473,7 +2484,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>ssh shopstarter7.cloudapp.net -p 60196</string>
+			<string>ssh azureuser@shopstarter -p 60196</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3074,7 +3085,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-03-03T20:39:38Z</date>
+	<date>2013-06-05T18:07:52Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -3122,6 +3133,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20130302</string>
+	<string>1.0.0.20130319</string>
 </dict>
 </plist>
