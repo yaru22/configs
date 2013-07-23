@@ -9,6 +9,7 @@
 		"=",
 		":"
 	],
+  "auto_complete_selector": "source - comment, meta.tag - punctuation.definition.tag.begin",
 	"bold_folder_labels": true,
 	"caret_style": "phase",
 	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",

@@ -33,6 +33,12 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 #
+# Go Lang
+#
+export GOPATH=~/workspace/go
+PATH=$GOPATH/bin:$PATH
+
+#
 # Node.js
 #
 export NODE_PATH=/usr/local/lib/node_modules:~/node_modules
