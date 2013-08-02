@@ -1,12 +1,15 @@
 #!/bin/bash
 
-CUR_DIR=`pwd`
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Setup soft links to the configuration files.
-ln -s $CUR_DIR/emacs/emacs.el ~/.emacs
-ln -s $CUR_DIR/emacs ~/.emacs.d
-ln -s $CUR_DIR/gem/gemrc ~/.gemrc
-ln -s $CUR_DIR/git/gitconfig ~/.gitconfig
-ln -s $CUR_DIR/vim/vimrc ~/.vimrc
-ln -s $CUR_DIR/zsh/zshrc ~/.zshrc
-ln -s $CUR_DIR/zsh/zsh_aliases ~/.zsh_aliases
+echo "Copying .gitconfig"
+cp $SCRIPT_DIR/git/gitconfig ~/.gitconfig
+
+echo "Copying .vimrc"
+cp $SCRIPT_DIR/vim/vimrc ~/.vimrc
+
+# Set global_ignore for Git
+echo "Configuring git's global_ignore"
+git config --global core.excludesfile $SCRIPT_DIR/git/global_ignore
+
