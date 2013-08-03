@@ -9,7 +9,7 @@
 	w = whatchanged
 
 [apply]
-    whitespace = fix
+	whitespace=fix
 
 [color]
 	diff = auto
