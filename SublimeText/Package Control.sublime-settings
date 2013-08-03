@@ -4,6 +4,7 @@
 	[
 		"AdvancedNewFile",
 		"Alignment",
+		"AngularJS",
 		"Auto Semi-Colon",
 		"BracketHighlighter",
 		"cdnjs",
@@ -11,6 +12,7 @@
 		"DocBlockr",
 		"Emmet",
 		"Git",
+		"GoSublime",
 		"Handlebars",
 		"JSHint",
 		"LESS",
