@@ -1,13 +1,24 @@
 alias bp='. ~/.bash_profile'
+
 alias b='cd ../'
 alias bb='cd ../../'
 alias bbb='cd ../../../'
 alias bbbb='cd ../../../../'
 alias bbbbb='cd ../../../../../'
+
 alias cdw='cd ~/workspace'
+
 alias gp='git pull'
 alias gs='git status'
 alias gd='git diff'
+
+alias ls='ls -hFG'
+alias l='ls -lF'
+alias ll='ls -alF'
+alias lt='ls -ltrF'
+alias ll='ls -alF'
+alias lls='ls -alSrF'
+alias llt='ls -altrF'
 
 # Make sure you have done this:
 # ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
