@@ -3,6 +3,7 @@
 #
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
+export PS1="\[\033[40m\]\[\033[33m\][ \u@\H:\[\033[32m\]\w\[\033[33m\]\$(__git_ps1 \" \[\033[35m\]{\[\033[34m\]%s\[\033[35m\]}\")\[\033[33m\] ]$\[\033[0m\] "
 
 #
 # Aliases
@@ -32,6 +33,7 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
+export GIT_PS1_SHOWDIRTYSTATE="1"
 source ~/.git-prompt.sh
 
 #
