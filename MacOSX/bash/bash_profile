@@ -84,7 +84,7 @@ export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 # Z
 #
 # NOTE: brew install z
-if [ -f `brew --prefix`/etc/profile.d/z.sh]; then
+if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
   . `brew --prefix`/etc/profile.d/z.sh
 fi
 
