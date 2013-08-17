@@ -32,6 +32,8 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
+source ~/.git-prompt.sh
+
 #
 # Go Lang
 #
@@ -39,7 +41,7 @@ export GOPATH=~/workspace/go
 PATH=$GOPATH/bin:$PATH
 
 #
-# mark/jump
+# mark/jump (See z at the bottom)
 # (http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html)
 #
 export MARKPATH=$HOME/.marks
@@ -77,4 +79,12 @@ export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 #
 # This loads RVM into a shell session.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+#
+# Z
+#
+# NOTE: brew install z
+if [ -f `brew --prefix`/etc/profile.d/z.sh]; then
+  . `brew --prefix`/etc/profile.d/z.sh
+fi
 
