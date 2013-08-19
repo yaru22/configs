@@ -54,6 +54,8 @@ map <F2> :w<CR>
 map <F9> :nohls<CR>
 "map J <C-w>j                   " moving to the upper window in command mode
 "map K <C-w>k                   " moving to the lower window in command mode
+vmap <C-x> :!pbcopy<CR>         " MacOSX specific paste
+vmap <C-c> :w !pbcopy<CR><CR>   " MacOSX specific copy
 
 "========== Unorganized ==========
 "Do not redraw, when running macros.. lazyredraw
