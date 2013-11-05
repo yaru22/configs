@@ -43,6 +43,11 @@ export GOPATH=~/workspace/go
 PATH=$GOPATH/bin:$PATH
 
 #
+# Haskell
+#
+PATH=~/.cabal/bin:$PATH
+
+#
 # mark/jump (See z at the bottom)
 # (http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html)
 #
