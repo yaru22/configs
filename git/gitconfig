@@ -7,6 +7,8 @@
 	lg = log --graph --oneline --all
 	ls = ls-files
 	w = whatchanged
+	today = !git log --since=midnight --author=\"$(git config user.name)\" --oneline
+	yesterday = !git log --since=yesterday.midnight --until=midnight --author=\"$(git config user.name)\" --oneline
 
 [apply]
 	whitespace=fix
