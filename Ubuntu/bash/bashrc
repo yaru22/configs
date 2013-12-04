@@ -63,6 +63,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Enable z (to jump between directories)
+. $HOME/workspace/configs/Ubuntu/z.sh
+
 #
 # Haskell
 #
