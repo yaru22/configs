@@ -6,6 +6,9 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "Copying .gitconfig"
 cp $SCRIPT_DIR/git/gitconfig ~/.gitconfig
 
+echo "Copying .ssh/config"
+cp $SCRIPT_DIR/ssh/config ~/.ssh/config
+
 echo "Copying .vimrc"
 cp $SCRIPT_DIR/vim/vimrc ~/.vimrc
 
