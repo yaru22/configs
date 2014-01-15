@@ -2,7 +2,7 @@
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Setup soft links to the configuration files.
+# Copy the configuration files.
 echo "Copying .gitconfig"
 cp $SCRIPT_DIR/git/gitconfig ~/.gitconfig
 
