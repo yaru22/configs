@@ -63,6 +63,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Git
+export GIT_PS1_SHOWDIRTYSTATE="1"
+. $HOME/workspace/configs/Ubuntu/git-prompt.sh
+. $HOME/workspace/configs/Ubuntu/git-completion.sh
+
 # Enable z (to jump between directories)
 . $HOME/workspace/configs/Ubuntu/z.sh
 
