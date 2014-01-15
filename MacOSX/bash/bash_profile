@@ -34,7 +34,7 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 export GIT_PS1_SHOWDIRTYSTATE="1"
-source ~/.git-prompt.sh
+. $HOME/workspace/configs/MacOSX/git-prompt.sh
 
 #
 # Go Lang
