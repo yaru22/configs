@@ -30,5 +30,6 @@ Icon
 # SublimeText.gitignore
 ##############################
 
+*.sublime-project
 *.sublime-workspace
 
