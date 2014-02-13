@@ -48,6 +48,11 @@ PATH=$GOPATH/bin:$PATH
 PATH=~/.cabal/bin:$PATH
 
 #
+# Java
+#
+export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+
+#
 # mark/jump (See z at the bottom)
 # (http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html)
 #
