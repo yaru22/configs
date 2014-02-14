@@ -89,6 +89,11 @@ export ANDROID_SDK_ROOT=$HOME/workspace/android-sdk-linux_x86
 PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 #
+# Java
+#
+export JAVA_HOME=/usr/lib/jvm/java-6-oracle
+
+#
 # Node.js
 #
 export NODE_PATH=/usr/local/lib/node_modules:$HOME/node_modules
