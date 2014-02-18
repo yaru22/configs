@@ -1,0 +1,18 @@
+{
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Alignment",
+		"AngularJS",
+		"BracketHighlighter",
+		"ColorPicker",
+		"DocBlockr",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"JSHint Gutter",
+		"Markdown Preview",
+		"Pretty JSON",
+		"SideBarEnhancements"
+	]
+}
