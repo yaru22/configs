@@ -11,10 +11,10 @@
   ],
   "bold_folder_labels": true,
   "highlight_line": true,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
   "margin": 2,
   "rulers":
   [
@@ -22,7 +22,7 @@
     100
   ],
   "scroll_past_end": true,
-	"tab_size": 2,
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true
 }
