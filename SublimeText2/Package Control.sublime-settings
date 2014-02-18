@@ -14,18 +14,17 @@
 		"Git",
 		"GitGutter",
 		"GoSublime",
-		"Handlebars",
 		"JSHint",
 		"LESS",
+		"Markdown Preview",
 		"Mocha Snippets",
-		"Nodejs",
 		"Package Control",
 		"Pretty JSON",
 		"SCSS",
 		"SideBarEnhancements",
+		"SublimeHaskell",
 		"SublimeLinter",
 		"SyncedSideBar",
-		"TidyHTML5",
-		"Twitter Recess"
+		"TidyHTML5"
 	]
 }
