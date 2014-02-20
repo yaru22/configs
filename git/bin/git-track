@@ -58,10 +58,11 @@ git checkout $LOCAL_BRANCH
 touch $TRACKFILE
 prev_track=`cat $TRACKFILE`
 last_commit_hash=`git rev-parse $TRACK_BRANCH`
-echo $last_commit_hash > $TRACKFILE
-git add $TRACKFILE
 
 if [ "$prev_track" != "$last_commit_hash" ]; then
   # Create patch and apply
-  git diff ${prev_track}..${TRACK_BRANCH} | git apply -3
+  git diff --binary ${prev_track}..${TRACK_BRANCH} | git apply -3
 fi
+
+echo $last_commit_hash > $TRACKFILE
+git add $TRACKFILE
