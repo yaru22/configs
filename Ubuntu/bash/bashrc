@@ -67,6 +67,7 @@ fi
 export GIT_PS1_SHOWDIRTYSTATE="1"
 . $HOME/workspace/configs/Ubuntu/git-prompt.sh
 . $HOME/workspace/configs/Ubuntu/git-completion.sh
+PATH=$HOME/workspace/configs/git/bin:$PATH
 
 # Enable z (to jump between directories)
 . $HOME/workspace/configs/Ubuntu/z.sh
