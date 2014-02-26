@@ -1,0 +1,8 @@
+{
+    "cmd": ["dot", "-Tsvg", "$file", "-o", "${file_base_name}.svg"],
+    "osx": {
+      "path": "/usr/local/bin"
+    },
+    "selector": "source.dot"
+}
+
