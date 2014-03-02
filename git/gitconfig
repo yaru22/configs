@@ -3,11 +3,12 @@
 	ci = commit
 	co = checkout
 	df = diff
-	st = status
+	g = grep --break --heading --line-number
 	lg = log --graph --oneline --all
 	ls = ls-files
-	w = whatchanged
+	st = status
 	today = !git log --since=midnight --author=\"$(git config user.name)\" --oneline
+	w = whatchanged
 	yesterday = !git log --since=yesterday.midnight --until=midnight --author=\"$(git config user.name)\" --oneline
 
 [apply]
@@ -48,6 +49,10 @@
 
 [difftool "diffmerge"]
 	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge $LOCAL $REMOTE
+
+[grep]
+	extendRegexp = true
+	lineNumber = true
 
 [push]
 	default = tracking
