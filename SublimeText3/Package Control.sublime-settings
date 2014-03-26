@@ -10,10 +10,13 @@
 		"Emmet",
 		"Git",
 		"GitGutter",
+		"Gutter Color",
 		"JSHint Gutter",
 		"LESS",
 		"Markdown Preview",
 		"Pretty JSON",
-		"SideBarEnhancements"
+		"SideBarEnhancements",
+		"SyncedSideBar",
+		"WordCount"
 	]
 }
