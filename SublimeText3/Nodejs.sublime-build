@@ -1,8 +1,8 @@
 {
 
-    "cmd": ["node", "$file"],
+    "cmd": ["node", "--harmony", "$file"],
     "osx": {
-      "path": "/usr/local/bin"
+      "path": "/usr/local/n/versions/0.11.10/bin/"
     },
     "selector": "source.js"
 }

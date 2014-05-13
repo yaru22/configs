@@ -8,6 +8,8 @@ alias bbbbb='cd ../../../../../'
 
 alias cdw='cd ~/workspace'
 
+alias dr="docker run -it --rm"
+
 alias gp='git pull'
 alias gs='git status'
 alias gd='git diff'
