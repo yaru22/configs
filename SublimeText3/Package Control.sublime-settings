@@ -11,12 +11,16 @@
 		"Git",
 		"GitGutter",
 		"Gutter Color",
+		"Indent XML",
 		"JSHint Gutter",
 		"LESS",
 		"Markdown Preview",
+		"MarkdownEditing",
+		"Mocha Snippets",
 		"Pretty JSON",
 		"SideBarEnhancements",
 		"SyncedSideBar",
-		"WordCount"
+		"WordCount",
+		"xml2json"
 	]
 }
