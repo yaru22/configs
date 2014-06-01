@@ -21,3 +21,6 @@ alias lt='ls -ltrF'
 alias ll='ls -alF'
 alias lls='ls -alSrF'
 alias llt='ls -altrF'
+
+# http://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
+alias sudo='sudo '
