@@ -8,6 +8,7 @@ alias bbbbb='cd ../../../../../'
 
 alias cdw='cd ~/workspace'
 
+alias dp="docker pull"
 alias dr="docker run -it --rm"
 
 alias gp='git pull'
@@ -21,3 +22,6 @@ alias lt='ls -ltrF'
 alias ll='ls -alF'
 alias lls='ls -alSrF'
 alias llt='ls -altrF'
+
+# http://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
+alias sudo='sudo '
