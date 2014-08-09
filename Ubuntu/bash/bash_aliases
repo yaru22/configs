@@ -10,6 +10,7 @@ alias cdw='cd ~/workspace'
 
 alias d="docker"
 alias di="docker images"
+alias dl="docker logs"
 alias dp="docker pull"
 alias dps="docker ps -a"
 alias dr="docker run -it --rm -v ~/.bashrc:/root/.bashrc -v ~/.bash_aliases:/root/.bash_aliases -v ~/.gitconfig:/root/.gitconfig -v ~/workspace/configs:/root/workspace/configs"
