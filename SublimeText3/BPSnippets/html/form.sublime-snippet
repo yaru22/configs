@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+<form name="${1:formName}" class="" novalidate ng-submit="${4:formSubmitMethod}($1.\$valid)">
+  <div class="form-group" ng-class="{ 'has-error': ($1.\$submitted || $1.$2.\$touched) && $1.$2.$invalid }">
+    <input type="${4:text}" name="${2:formFieldName}" class="form-control" placeholder="e-mail address" ng-model="formData.$2" required />
+    <div ng-messages="$1.$2.\$error" ng-if="$1.\$submitted || $1.$2.\$touched">
+      <p class="text-danger" ng-message="${5:errorType}">${6:errorMsg}</p>
+    </div>
+  </div>
+</form>
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>bpf</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>text.html</scope>
+</snippet>

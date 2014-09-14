@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+<div class="form-group" ng-class="{ 'has-error': ($1.\$submitted || $1.$2.\$touched) && $1.$2.$invalid }">
+  <input type="${3:text}" name="${2:formFieldName}" class="form-control" placeholder="e-mail address" ng-model="formData.$2" required />
+  <div ng-messages="${1:formName}.${2:formFieldName}.\$error" ng-if="$1.\$submitted || $1.$2.\$touched">
+    <p class="text-danger" ng-message="${4:errorType}">${5:errorMsg}</p>
+  </div>
+</div>
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>bpfg</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>text.html</scope>
+</snippet>
