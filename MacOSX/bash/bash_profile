@@ -18,6 +18,11 @@ export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r8
 PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 #
+# Boot2Docker
+#
+$(boot2docker shellinit)
+
+#
 # Cocos2d-X
 #
 export NDK_ROOT=$ANDROID_NDK_ROOT
