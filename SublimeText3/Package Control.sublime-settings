@@ -13,6 +13,7 @@
 		"Git",
 		"GitGutter",
 		"GoSublime",
+		"HTML-CSS-JS Prettify",
 		"Indent XML",
 		"JSHint Gutter",
 		"LESS",
@@ -22,6 +23,8 @@
 		"Pretty JSON",
 		"SCSS",
 		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-jscs",
 		"SyncedSideBar",
 		"WordCount",
 		"xml2json"
