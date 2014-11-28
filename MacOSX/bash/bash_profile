@@ -82,6 +82,12 @@ syspip() {
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 
 #
+# RabbitMQ
+#
+# NOTE: brew install rabbitmq
+PATH=$PATH:/usr/local/sbin
+
+#
 # Ruby
 #
 # This loads RVM into a shell session.
