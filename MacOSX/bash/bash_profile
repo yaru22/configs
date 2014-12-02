@@ -18,6 +18,12 @@ export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r8
 PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 #
+# Autoenv
+#
+# NOTE: brew install autoenv
+source /usr/local/opt/autoenv/activate.sh
+
+#
 # Boot2Docker
 #
 $(boot2docker shellinit)
