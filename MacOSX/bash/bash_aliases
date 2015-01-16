@@ -8,6 +8,8 @@ alias bbbbb='cd ../../../../../'
 
 alias cdw='cd ~/workspace'
 
+alias cwd='printf "%q" "$(pwd)" | pbcopy && echo "Copied current working directory to the clipboard"'
+
 alias dr='docker run -d --env-file=$HOME/.docker-registry --name registry -p 5000:5000 google/docker-registry'
 
 alias gp='git pull'
