@@ -1,11 +1,17 @@
 {
+	"in_process_packages":
+	[
+	],
+	"installed_dependencies":
+	[
+		"0_package_control_loader",
+		"bz2"
+	],
 	"installed_packages":
 	[
 		"AdvancedNewFile",
-		"Alignment",
 		"AngularJS",
 		"Bash Build System",
-		"Bootstrap 3 Snippets",
 		"BracketHighlighter",
 		"ColorPicker",
 		"DocBlockr",
@@ -17,14 +23,15 @@
 		"Indent XML",
 		"JSHint Gutter",
 		"LESS",
-		"Markdown Preview",
-		"MarkdownEditing",
 		"Mocha Snippets",
+		"Package Control",
 		"Pretty JSON",
 		"SCSS",
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SublimeLinter-jscs",
+		"SublimeLinter-jshint",
+		"SublimeLinter-jsxhint",
 		"SyncedSideBar",
 		"WordCount",
 		"xml2json"
