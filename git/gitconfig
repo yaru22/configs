@@ -40,7 +40,7 @@
 	untracked = cyan
 
 [core]
-	editor = emacs
+	editor = vim 
 	pager = less -FRSX
 	whitespace = fix, -indent-with-non-tab, trailing-space, cr-at-eol
 
