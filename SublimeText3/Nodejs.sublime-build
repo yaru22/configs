@@ -1,7 +1,7 @@
 {
     "cmd": ["node", "--harmony", "$file"],
     "osx": {
-      "path": "/usr/local/bin/:/usr/local/n/versions/0.11.14/bin/"
+      "path": "/usr/local/bin/",
     },
     "selector": "source.js"
 }
