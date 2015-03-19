@@ -1,5 +1,5 @@
 {
-    "cmd": ["node", "--harmony", "$file"],
+    "cmd": ["babel-node", "$file"],
     "osx": {
       "path": "/usr/local/bin/",
     },
