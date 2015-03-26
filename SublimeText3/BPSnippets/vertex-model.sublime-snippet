@@ -1,0 +1,36 @@
+<snippet>
+  <content><![CDATA[
+'use strict';
+
+import merge from 'lodash/object/merge';
+
+import { V } from 'data2/models/Base';
+import Factory from 'data2/models/Factory';
+
+const TABLE_NAME = '${1:name}';
+
+class $1 extends V {
+  static get tableName() {
+    return TABLE_NAME;
+  }
+
+  addLink(link, reverse) {
+    switch (link.__table__) {
+      default:
+        throw new Error(`Unrecognized link \${link.__table__} in \${TABLE_NAME}`);
+    }
+  }
+
+  toJSON() {
+    let json = super.toJSON();
+    return merge(json, {
+    });
+  }
+}
+Factory.mapping[TABLE_NAME] = $1;
+
+export default $1;
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>bpvm</tabTrigger>
+</snippet>
