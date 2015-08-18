@@ -2,6 +2,10 @@
     "cmd": ["babel-node", "$file"],
     "osx": {
       "path": "/usr/local/bin/",
+      "env": {
+        "NODE_ENV": "development",
+        "NODE_PATH": "/Users/brianpark/workspace/kidwise/marketplace:/Users/brianpark/workspace/forecast"
+      }
     },
     "selector": "source.js"
 }
