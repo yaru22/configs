@@ -6,5 +6,8 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "Copying .bash_aliases"
 cp $SCRIPT_DIR/bash/bash_aliases ~/.bash_aliases
 
+echo "Copying .bash_colors"
+cp $SCRIPT_DIR/bash/bash_colors ~/.bash_colors
+
 echo "Copying .bashrc"
 cp $SCRIPT_DIR/bash/bashrc ~/.bashrc
