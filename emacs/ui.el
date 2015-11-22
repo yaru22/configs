@@ -19,7 +19,10 @@
 
 ;; Enabling X11 Copy & Paste to/from Emacs:
 (setq x-select-enable-clipboard t)
-(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+(if (eq system-type 'gnu-linux)
+    (setq interprogram-paste-function 'x-cut-buffer-or-selection-value))
+(if (eq system-type 'windows-nt)
+    (setq interprogram-paste-function 'x-selection-value))
 
 ;; Get a buffer menu with the right mouse button
 (global-set-key [mouse-3] 'mouse-buffer-menu)
