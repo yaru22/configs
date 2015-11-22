@@ -1,6 +1,3 @@
-;; Add various modes to the load-path
-(add-to-list 'load-path "~/.emacs.d/modes/")
-
 ;; No tab
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
@@ -20,12 +17,6 @@
 
 ;; Lua mode
 (setq lua-indent-level 2)
-
-;; Coffee script mode
-(require 'coffee-mode)
-
-;; Less CSS mode
-(require 'less-css-mode)
 
 ;; HTML mode for .tmpl files
 (add-to-list 'auto-mode-alist '("\\.tmpl$" . html-mode))
