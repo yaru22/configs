@@ -15,13 +15,6 @@
 (load "~/.emacs.d/utils/dos2unix")
 (load "~/.emacs.d/utils/indent-buffer")
 
-;; Installing yasnippet
-(add-to-list 'load-path
-                  "~/.emacs.d/plugins/yasnippet-0.6.1c")
-    (require 'yasnippet) ;; not yasnippet-bundle
-    (yas/initialize)
-    (yas/load-directory "~/.emacs.d/plugins/yasnippet-0.6.1c/snippets")
-
 ;; Find file at point lets you put the point over a file name and open
 ;; it with C-x C-f
 (ffap-bindings)
@@ -66,4 +59,3 @@
                                  answer)))))))
 
 (global-set-key (kbd "C-c +") 'increment-number-at-point)
-
