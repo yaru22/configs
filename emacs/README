@@ -1,3 +1,3 @@
-List of ELPA Packages Installed
-===============================
-* js2-mode
+Use [Emacs Prelude](https://github.com/bbatsov/prelude) which has all the
+configurations setup right. Just add some personalization to it.
+

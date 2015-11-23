@@ -1,8 +1,4 @@
-(require 'go-mode)
-(require 'go-mode-load)
-
 (add-hook 'before-save-hook 'gofmt-before-save)
-
 (add-hook 'go-mode-hook '(lambda ()
   (local-set-key (kbd "C-c C-f") 'gofmt)))
 (add-hook 'go-mode-hook '(lambda ()
