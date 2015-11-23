@@ -10,7 +10,6 @@
 (global-set-key [f2 f2] 'kill-buffer)
 (global-set-key [f2 ?i] 'indent-buffer)
 (global-set-key [f2 ?r] 'revert-buffer)
-(global-set-key [f2 ?y] 'yas/insert-snippet)
 
 ;; F6 sets a bookmark, F7 loads the list of bookmarks
 (global-set-key [f6] 'bookmark-set)

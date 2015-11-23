@@ -1,3 +1,6 @@
+;; Add various modules to the load-path
+(add-to-list 'load-path "~/.emacs.d/modes/")
+
 ;; No tab
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
@@ -8,6 +11,9 @@
   (lambda ()
     (c-set-style "cc-mode")
     (c-set-offset 'substatement-open 0)))
+
+;; Go mode
+(load "~/.emacs.d/modes/go")
 
 ;; Javascript mode
 (setq js-indent-level 2)
