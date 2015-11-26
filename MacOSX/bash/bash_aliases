@@ -32,6 +32,10 @@ alias llt='ls -altrF'
 # ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 alias s='subl'
 
+v() {
+  VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
+}
+
 
 #
 # Custom Functions
