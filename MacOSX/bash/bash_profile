@@ -38,6 +38,7 @@ PATH=$HOME/workspace/configs/git/bin:$PATH
 #
 # Go Lang
 #
+export GO15VENDOREXPERIMENT=1
 export GOPATH=~/workspace/go
 PATH=$GOPATH/bin:$PATH
 
