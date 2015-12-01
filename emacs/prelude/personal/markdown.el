@@ -1,0 +1,1 @@
+(setq markdown-command "marked")
