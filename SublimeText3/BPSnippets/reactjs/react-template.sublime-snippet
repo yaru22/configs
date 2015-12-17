@@ -1,23 +1,64 @@
 <snippet>
   <content><![CDATA[
-'use strict';
+import React from 'react';
+import CSSModules from 'react-css-modules';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-var React = require('react');
-var Router = require('react-router');
-var { Link, RouteHandler } = Router;
+import styles from './styles.module';
+import {} from 'rdx/actions';
 
+class ${1:name} extends React.Component {
+  static displayName = '$1';
 
-var ${1:name} = React.createClass({
+  static propTypes = {
+    children: React.PropTypes.node.isRequired,
+    actions: React.PropTypes.object.isRequired,
+  };
+
+  state = {
+  };
+
+  componentWillMount() {
+  }
+
+  componentDidMount() {
+  }
+
+  componentWillReceiveProps(nextProps) {
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+  }
+
+  componentWillUnmount() {
+  }
+
   render() {
     return (
-      <RouteHandler />
+      <div>
+      </div>
     );
   }
-});
+}
 
+function mapStateToProps(state) {
+  return {
+  };
+}
 
-module.exports = $1;
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({
+    }, dispatch),
+  };
+}
+
+// NOTE: CSSModules must be the first one to wrap the component.
+// https://github.com/gajus/react-css-modules/issues/9
+export default connect(mapStateToProps, mapDispatchToProps)(CSSModules($1, styles));
+
 ]]></content>
   <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-  <tabTrigger>bprt</tabTrigger>
+  <tabTrigger>bpreact</tabTrigger>
 </snippet>
