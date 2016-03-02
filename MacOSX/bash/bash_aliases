@@ -12,6 +12,8 @@ alias cwd='printf "%q" "$(pwd)" | pbcopy && echo "Copied current working directo
 
 alias dr='docker run -d --env-file=$HOME/.docker-registry --name registry -p 5000:5000 google/docker-registry'
 
+alias ec='emacsclient'
+
 alias gp='git pull'
 alias gs='git status'
 alias gd='git diff'
