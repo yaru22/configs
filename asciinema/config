@@ -1,0 +1,5 @@
+[record]
+command = /bin/bash -l
+maxwait = 1
+
+[api]
