@@ -2,8 +2,7 @@
 # Colorful Terminal
 #
 source ~/.bash_colors
-export PS1="${OnBlack}${Yellow}[ \u@\H:${Green}\w${Yellow}\$(__git_ps1 \" ${Purple}{${Cyan}%s${Purple}}\")${Yellow} ]\$${Rst} "
-#export PS1="\[\033[40m\]\[\033[33m\][ \u@\H:\[\033[32m\]\w\[\033[33m\]\$(__git_ps1 \" \[\033[35m\]{\[\033[36m\]%s\[\033[35m\]}\")\[\033[33m\] ]$\[\033[0m\] "
+export PS1="${OnBlack}${Yellow}[ \u@\H:${Green}\w${Yellow}\[\$(__git_ps1 \" ${Purple}{${Cyan}%s${Purple}}\")${Yellow} ]\$\]${Rst} "
 
 #
 # Aliases

@@ -4,33 +4,37 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 TC='\033['
+function wrap() {
+  # Non-printing character has to be wrapped in \[ and \].
+  echo "\[${TC}${1}\]"
+}
 
-CLR_LINE_START="${TC}1K"
-CLR_LINE_END="${TC}K"
-CLR_LINE="${TC}2K"
+CLR_LINE_START=`wrap 1K`
+CLR_LINE_END=`wrap K`
+CLR_LINE=`wrap 2K`
 
 # Hope no terminal is greater than 1k columns
-RESET_LINE="${CLR_LINE}${TC}1000D"
+RESET_LINE="${CLR_LINE}`wrap 1000D`"
 
 # Colors and styles (based on https://github.com/demure/dotfiles/blob/master/subbash/prompt)
 
-Bold="${TC}1m"    # Bold text only, keep colors
-Undr="${TC}4m"    # Underline text only, keep colors
-Inv="${TC}7m"     # Inverse: swap background and foreground colors
-Reg="${TC}22;24m" # Regular text only, keep colors
-RegF="${TC}39m"   # Regular foreground coloring
-RegB="${TC}49m"   # Regular background coloring
-Rst="${TC}0m"     # Reset all coloring and style
+Bold=`wrap 1m`    # Bold text only, keep colors
+Undr=`wrap 4m`    # Underline text only, keep colors
+Inv=`wrap 7m`     # Inverse: swap background and foreground colors
+Reg=`wrap "22;24m"` # Regular text only, keep colors
+RegF=`wrap 39m`   # Regular foreground coloring
+RegB=`wrap 49m`   # Regular background coloring
+Rst=`wrap 0m`     # Reset all coloring and style
 
 # Basic            High Intensity      Background           High Intensity Background
-Black="${TC}30m";  IBlack="${TC}90m";  OnBlack="${TC}40m";  OnIBlack="${TC}100m";
-Red="${TC}31m";    IRed="${TC}91m";    OnRed="${TC}41m";    OnIRed="${TC}101m";
-Green="${TC}32m";  IGreen="${TC}92m";  OnGreen="${TC}42m";  OnIGreen="${TC}102m";
-Yellow="${TC}33m"; IYellow="${TC}93m"; OnYellow="${TC}43m"; OnIYellow="${TC}103m";
-Blue="${TC}34m";   IBlue="${TC}94m";   OnBlue="${TC}44m";   OnIBlue="${TC}104m";
-Purple="${TC}35m"; IPurple="${TC}95m"; OnPurple="${TC}45m"; OnIPurple="${TC}105m";
-Cyan="${TC}36m";   ICyan="${TC}96m";   OnCyan="${TC}46m";   OnICyan="${TC}106m";
-White="${TC}37m";  IWhite="${TC}97m";  OnWhite="${TC}47m";  OnIWhite="${TC}107m";
+Black=`wrap 30m`;  IBlack=`wrap 90m`;  OnBlack=`wrap 40m`;  OnIBlack=`wrap 100m`;
+Red=`wrap 31m`;    IRed=`wrap 91m`;    OnRed=`wrap 41m`;    OnIRed=`wrap 101m`;
+Green=`wrap 32m`;  IGreen=`wrap 92m`;  OnGreen=`wrap 42m`;  OnIGreen=`wrap 102m`;
+Yellow=`wrap 33m`; IYellow=`wrap 93m`; OnYellow=`wrap 43m`; OnIYellow=`wrap 103m`;
+Blue=`wrap 34m`;   IBlue=`wrap 94m`;   OnBlue=`wrap 44m`;   OnIBlue=`wrap 104m`;
+Purple=`wrap 35m`; IPurple=`wrap 95m`; OnPurple=`wrap 45m`; OnIPurple=`wrap 105m`;
+Cyan=`wrap 36m`;   ICyan=`wrap 96m`;   OnCyan=`wrap 46m`;   OnICyan=`wrap 106m`;
+White=`wrap 37m`;  IWhite=`wrap 97m`;  OnWhite=`wrap 47m`;  OnIWhite=`wrap 107m`;
 
 # examples
 # echo "${Bold}${Red}bold red on ${OnBlue}blue background,${RegB} now back to regular background, ${RegF}regular foreground and ${Reg}regular text"
