@@ -89,6 +89,13 @@ export ANDROID_SDK_ROOT=$HOME/workspace/android-sdk-linux_x86
 PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 #
+# Go Lang
+#
+export GOPATH=~/.go:~/workspace/go
+export GOBIN=~/.go/bin
+PATH=$GOBIN:$PATH
+
+#
 # Java
 #
 export JAVA_HOME=/usr/lib/jvm/java-6-oracle
