@@ -16,6 +16,7 @@ alias dps="docker ps -a"
 alias dr="docker run -it --rm -v ~/.bashrc:/root/.bashrc -v ~/.bash_aliases:/root/.bash_aliases -v ~/.gitconfig:/root/.gitconfig -v ~/workspace/configs:/root/workspace/configs"
 
 alias ec='emacsclient'
+alias eck="emacsclient -e '(kill-emacs)'"
 
 alias gp='git pull'
 alias gs='git status'
