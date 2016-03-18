@@ -27,8 +27,10 @@ values."
      ;; better-defaults
      emacs-lisp
      git
-     markdown
      go
+     markdown
+     octave
+     themes-megapack
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
