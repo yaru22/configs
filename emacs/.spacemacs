@@ -25,6 +25,7 @@ values."
      ;; ----------------------------------------------------------------
      ;; auto-completion
      ;; better-defaults
+     bp
      elm
      emacs-lisp
      git
