@@ -25,19 +25,21 @@ values."
      ;; ----------------------------------------------------------------
      ;; auto-completion
      ;; better-defaults
+     elm
      emacs-lisp
      git
      go
      markdown
      octave
+     org
+     react
      themes-megapack
-     ;; org
+     version-control
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
      ;; syntax-checking
-     ;; version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -242,6 +244,16 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
+  (setq-default
+   ;; js2-mode
+   js2-basic-offset 2
+   js-indent-level 2
+   ;; web-mode
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2)
   )
 
 (defun dotspacemacs/user-config ()
