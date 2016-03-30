@@ -31,6 +31,7 @@ values."
      git
      go
      markdown
+     python
      octave
      org
      react
