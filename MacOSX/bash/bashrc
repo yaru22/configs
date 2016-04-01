@@ -1,4 +1,106 @@
-if [ -f ~/.bashrc ]; then
-  source ~/.bashrc
+#
+# Colorful Terminal
+#
+source ~/.bash_colors
+export PS1="${OnBlack}${Yellow}[ \u@\H:${Green}\w${Yellow}\[\$(__git_ps1 \" ${Purple}{${Cyan}%s${Purple}}\")${Yellow} ]\$\]${Rst} "
+export TERM="xterm-256color"
+
+#
+# Aliases
+#
+source ~/.bash_aliases
+
+#
+# Android
+#
+export ANDROID_HOME=~/Library/Android/sdk
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21
+export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r8
+PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+
+#
+# Boot2Docker
+#
+$(boot2docker shellinit)
+
+#
+# Git
+#
+# NOTE: brew install git bash-completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
 fi
+
+export GIT_PS1_SHOWDIRTYSTATE="1"
+. $HOME/workspace/configs/MacOSX/git-prompt.sh
+PATH=$HOME/workspace/configs/git/bin:$PATH
+
+#
+# Go Lang
+#
+export GOPATH=~/.go:~/workspace/go
+export GOBIN=~/.go/bin
+PATH=$GOBIN:$PATH
+
+#
+# Haskell
+#
+PATH=~/.cabal/bin:$PATH
+
+#
+# Java
+#
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+#
+# Node.js
+#
+export NODE_PATH=/usr/local/lib/node_modules:~/node_modules
+PATH=~/node_modules/.bin:$PATH
+
+#
+# PHP
+#
+PATH=/Applications/XAMPP/xamppfiles/bin:$PATH
+
+#
+# Python
+#
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+# cache pip-installed packages to avoid re-downloading
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+syspip() {
+  PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+
+#
+# RabbitMQ
+#
+# NOTE: brew install rabbitmq
+PATH=$PATH:/usr/local/sbin
+
+#
+# Ruby
+#
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# This loads RVM into a shell session.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+#
+# Z
+#
+# NOTE: brew install z
+if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
+  . `brew --prefix`/etc/profile.d/z.sh
+fi
+
+#
+# Autoenv
+#
+# NOTE: brew install autoenv
+# NOTE: The following has to be placed at the end of bash_profile.
+# It seems to have conflict with another above (?).
+source /usr/local/opt/autoenv/activate.sh
 

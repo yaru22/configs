@@ -1,4 +1,4 @@
-alias bp='. ~/.bash_profile'
+alias bp='. ~/.bashrc'
 
 alias b='cd ../'
 alias bb='cd ../../'
@@ -7,6 +7,8 @@ alias bbbb='cd ../../../../'
 alias bbbbb='cd ../../../../../'
 
 alias cdw='cd ~/workspace'
+alias cdwc='cd ~/workspace/configs'
+alias cdwg='cd ~/workspace/go'
 
 alias cwd='printf "%q" "$(pwd)" | pbcopy && echo "Copied current working directory to the clipboard"'
 
@@ -35,6 +37,8 @@ alias llt='ls -altrF'
 # ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 alias s='subl'
 
+alias sudo='sudo '
+
 v() {
   VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
 }
@@ -43,6 +47,15 @@ v() {
 #
 # Custom Functions
 #
+
+pwp() {
+  pass=$(pwsafe -qp "$1");
+  if [ ! "$pass" = "" ]; then
+    printf "%s" ${pass##"\n"} | pbcopy;
+    echo "OK: $1";
+  fi;
+  pass=0
+}
 
 # Crush all png files in the directory
 crushpng() {
@@ -53,7 +66,7 @@ crushpng() {
 }
 
 # Easily extract all compressed file types
-extract () {
+extract() {
    if [ -f "$1" ] ; then
        case $1 in
            *.tar.bz2)   tar xvjf -- "$1"    ;;
