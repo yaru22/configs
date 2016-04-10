@@ -30,6 +30,8 @@ values."
      emacs-lisp
      git
      go
+     html
+     javascript
      markdown
      python
      octave
