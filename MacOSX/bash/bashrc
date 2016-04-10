@@ -57,6 +57,8 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 #
 export NODE_PATH=/usr/local/lib/node_modules:~/node_modules
 PATH=~/node_modules/.bin:$PATH
+export NVM_DIR="/Users/brianpark/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 #
 # PHP
