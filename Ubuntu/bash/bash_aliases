@@ -15,6 +15,7 @@ alias dp="docker pull"
 alias dps="docker ps -a"
 alias dr="docker run -it --rm -v ~/.bashrc:/root/.bashrc -v ~/.bash_aliases:/root/.bash_aliases -v ~/.gitconfig:/root/.gitconfig -v ~/workspace/configs:/root/workspace/configs"
 
+alias ed='emacs --daemon'
 alias ec='emacsclient'
 alias eck="emacsclient -e '(kill-emacs)'"
 
