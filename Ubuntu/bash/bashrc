@@ -32,7 +32,8 @@ fi
 # Colorful Terminal
 #
 source ~/.bash_colors
-export PS1="${OnBlack}${Yellow}[ \u@\H:${Green}\w${Yellow}\[\$(__git_ps1 \" ${Purple}{${Cyan}%s${Purple}}\")${Yellow} ]\$\]${Rst} "
+# Non-printing character has to be wrapped in \[ and \].
+export PS1="\[${OnBlack}${Yellow}\][ \u@\H:\[${Green}\]\w\[${Yellow}\]\$(__git_ps1 \" \[${Purple}\]{\[${Cyan}\]%s\[${Purple}\]}\")\[${Yellow}\] ]\$\[${Rst}\] "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
