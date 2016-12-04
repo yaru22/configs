@@ -87,3 +87,11 @@ extract() {
        echo "'$1' is not a valid file"
    fi
 }
+
+# `go get <package>` downloads to GOPATH[0]
+# `goget <package>` downloads to GOPATH[1]
+goget() {
+  tmp=(${GOPATH//:/ })
+  GOPATH=${tmp[1]} go get "$@"
+  unset tmp
+}
