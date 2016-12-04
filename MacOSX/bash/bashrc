@@ -62,11 +62,6 @@ export NVM_DIR="/Users/brianpark/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 #
-# PHP
-#
-PATH=/Applications/XAMPP/xamppfiles/bin:$PATH
-
-#
 # Python
 #
 # pip should only run if there is a virtualenv currently activated
