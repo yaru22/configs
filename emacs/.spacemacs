@@ -31,6 +31,7 @@ values."
      git
      go
      html
+     ;; npm install -g tern js-beautify jshint
      javascript
      markdown
      python
@@ -104,10 +105,10 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(ujelly
-                         zenburn
-                         spacemacs-dark
+   dotspacemacs-themes '(spacemacs-dark
                          spacemacs-light
+                         ujelly
+                         zenburn
                          solarized-light
                          solarized-dark
                          leuven
@@ -259,20 +260,24 @@ in `dotspacemacs/user-config'."
    web-mode-markup-indent-offset 2
    web-mode-css-indent-offset 2
    web-mode-code-indent-offset 2
-   web-mode-attr-indent-offset 2)
+   web-mode-attr-indent-offset 2
+   )
   )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  (add-to-list 'auto-mode-alist '("\\.ts\\'" . js2-mode))
+
   (setq-default
    ;; linum
    linum-format "%4d\u2502 "
-   linum-relative-format "%4s\u2502 "
+   linum-relative-format "%3s\u2502 "
 
    ;; go-mode
-   gofmt-command "goimports")
+   gofmt-command "goimports"
+   )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
