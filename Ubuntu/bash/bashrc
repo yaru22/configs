@@ -78,18 +78,6 @@ PATH=$HOME/workspace/configs/git/bin:$PATH
 PATH=$HOME/.cabal/bin:$PATH
 
 #
-# Android NDK
-#
-export ANDROID_NDK_ROOT=$HOME/workspace/android-ndk-r7
-PATH=$ANDROID_NDK_ROOT:$ANDROID_NDK_ROOT/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin:$PATH
-
-#
-# Android SDK
-#
-export ANDROID_SDK_ROOT=$HOME/workspace/android-sdk-linux_x86
-PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
-
-#
 # Go Lang
 #
 export GOPATH=~/.go:~/workspace/go

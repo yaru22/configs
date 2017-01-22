@@ -12,6 +12,16 @@ export TERM="xterm-256color"
 source ~/.bash_aliases
 
 #
+# History
+#
+# No dup commands in history.
+export HISTCONTROL=ignoreboth:erasedups
+# Enable ctrl-s (forward history search).
+stty -ixon
+
+################################################################################
+
+#
 # Android
 #
 export ANDROID_HOME=~/Library/Android/sdk

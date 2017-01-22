@@ -31,5 +31,9 @@ alias ll='ls -alF'
 alias lls='ls -alSrF'
 alias llt='ls -altrF'
 
+# Emulate MacOS's pbcopy and pbpaste.
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
 # http://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
 alias sudo='sudo '
