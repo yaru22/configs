@@ -22,19 +22,6 @@ stty -ixon
 ################################################################################
 
 #
-# Android
-#
-export ANDROID_HOME=~/Library/Android/sdk
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r21
-export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r8
-PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
-
-#
-# Boot2Docker
-#
-$(boot2docker shellinit)
-
-#
 # Git
 #
 # NOTE: brew install git bash-completion
