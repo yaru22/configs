@@ -18,8 +18,10 @@ source ~/.bash_aliases
 export HISTCONTROL=ignoreboth:erasedups
 # Enable ctrl-s (forward history search).
 stty -ixon
-
-################################################################################
+# This is super useful for navigating through history.
+# Just write initial letters and press "up" and/or "down" arrow
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
 
 #
 # Git
