@@ -1,0 +1,16 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Copy the configuration files.
+echo "Copying .bash_aliases"
+cp $SCRIPT_DIR/bash_aliases ~/.bash_aliases
+
+echo "Copying .bash_colors"
+cp $SCRIPT_DIR/bash_colors ~/.bash_colors
+
+echo "Copying .bash_profile"
+cp $SCRIPT_DIR/bash_profile ~/.bash_profile
+
+echo "Copying .bashrc"
+cp $SCRIPT_DIR/bashrc ~/.bashrc
