@@ -1,5 +1,8 @@
 alias bp='. ~/.bashrc'
 
+alias battery='pmset -g rawlog'
+alias power='pmset -g adapter'
+
 alias b='cd ../'
 alias bb='cd ../../'
 alias bbb='cd ../../../'
