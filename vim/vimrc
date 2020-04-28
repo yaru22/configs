@@ -27,6 +27,7 @@ set wildmenu                    "turn on WiLd menu
 
 set background=light            "dark is recommended for black background
 syntax on
+colorscheme industry
 
 "========== Highlight search things ==========
 set hlsearch
