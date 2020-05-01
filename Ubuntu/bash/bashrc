@@ -115,15 +115,6 @@ syspip() {
 [[ -f /usr/local/bin/activate.sh ]] && source /usr/local/bin/activate.sh
 
 #
-# Ruby
-#
-# RVM
-PATH=$HOME/.rvm/bin:$PATH
-
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-#
 # Emacs
 #
 # For Emacs Tramp mode to work
