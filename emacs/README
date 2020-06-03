@@ -1,3 +1,5 @@
-Use [Emacs Prelude](https://github.com/bbatsov/prelude) which has all the
-configurations setup right. Just add some personalization to it.
+- bare: The config files of when I first started using Emacs.
+- prelude: https://github.com/bbatsov/prelude)
+- spacemacs: https://github.com/syl20bnr/spacemacs
+- doom-emacs: https://github.com/hlissner/doom-emacs (current setup)
 
