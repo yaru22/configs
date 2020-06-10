@@ -55,16 +55,14 @@
 
 (use-package! org
   :mode (("\\.org\\'" . org-mode)
-         ("\\.org_archive\\'" . org-mode))
+         ("\\.org_archive\\'" . org-mode)
+         ("\\.org_tmpl\\'" . org-mode))
   :init
   (setq
    ;; directories
    org-directory "~/workspace/notes"
    org-roam-directory "~/workspace/notes"
    org-attach-id-dir "~/workspace/notes/data"
-
-   ;; agenda
-   org-agenda-files '("~/workspace/notes/personal.org")
 
    ;; babel
    org-babel-load-languages '((emacs-lisp . t)
@@ -87,6 +85,8 @@
         "M-n" #'outline-next-visible-heading
         "M-p" #'outline-previous-visible-heading)
   (setq
+   ;; agenda
+   org-agenda-files '("~/workspace/notes/")
 
    ;; babel
    org-confirm-babel-evaluate nil
@@ -94,10 +94,33 @@
    org-src-tab-acts-natively t
 
    ;; capture
-   org-capture-templates '(("j" "Journal" entry
-                            (file+olp+datetree "~/workspace/notes/journal.org")
-                            (file "~/workspace/notes/templates/journal.tmpl")
-                            :jump-to-captured t :empty-lines-before 1))
+   org-capture-templates
+   '(
+     ("j" "Journal" entry
+      (file+olp+datetree "~/workspace/notes/journal.org")
+      (file "~/workspace/notes/templates/journal.org_tmpl")
+      :jump-to-captured t :empty-lines-after 1)
+     ("d" "Daily Review" entry
+      (file+olp+datetree "~/workspace/notes/reviews.org" "Daily")
+      (file "~/workspace/notes/templates/daily_review.org_tmpl")
+      :jump-to-captured t)
+     ("w" "Weekly Review" entry
+      (file+olp+datetree "~/workspace/notes/reviews.org" "Weekly")
+      (file "~/workspace/notes/templates/weekly_review.org_tmpl")
+      :jump-to-captured t)
+     ("m" "Monthly Review" entry
+      (file+olp+datetree "~/workspace/notes/reviews.org" "Monthly")
+      (file "~/workspace/notes/templates/monthly_review.org_tmpl")
+      :jump-to-captured t)
+     ("q" "Quarterly Review" entry
+      (file+olp+datetree "~/workspace/notes/reviews.org" "Quarterly")
+      (file "~/workspace/notes/templates/quarterly_review.org_tmpl")
+      :jump-to-captured t)
+     ("y" "Yearly Review" entry
+      (file+olp+datetree "~/workspace/notes/reviews.org" "Yearly")
+      (file "~/workspace/notes/templates/yearly_review.org_tmpl")
+      :jump-to-captured t)
+     )
 
    ;; export
    org-export-backends '(ascii beamer html icalendar latex md odt)
