@@ -151,3 +151,12 @@
 
    )
   )
+
+(use-package deft
+  :after org
+  :custom
+  (deft-recursive t)
+  (deft-use-filter-string-for-filename t)
+  (deft-default-extension "org")
+  (deft-directory "~/workspace/notes")
+  )
