@@ -71,7 +71,6 @@
                               (plantuml . t)
                               (python . t)
                               (sqlite . t)))
-
   :config
   ;; modules
   (require 'org-checklist)
@@ -87,6 +86,9 @@
   (setq
    ;; agenda
    org-agenda-files '("~/workspace/notes/")
+
+   ;; archive
+   org-archive-reversed-order t
 
    ;; babel
    org-confirm-babel-evaluate nil
@@ -151,6 +153,59 @@
 
    )
   )
+
+;;
+;; Org Roam
+;;
+
+(use-package! org-roam
+  :custom-face
+  (org-roam-link ((t (:inherit org-link :foreground "#E95533"))))
+  :init
+  (setq
+   org-roam-directory "~/workspace/notes"
+   org-roam-graph-viewer "/usr/bin/open"
+   org-roam-tag-sources '(prop last-directory)
+   )
+  :config
+  (setq
+   org-roam-capture-templates
+   '(
+     ("a" "article" plain (function org-roam--capture-get-point)
+      "%?"
+      :file-name "articles/${slug}"
+      :head "#+TITLE: ${title}
+#+ROAM_KEY: ${url}
+#+ROAM_TAGS: website"
+      :unnarrowed t)
+     ("b" "book" plain (function org-roam--capture-get-point)
+      "%?"
+      :file-name "books/${slug}"
+      :head "#+TITLE: ${title}\n"
+      :unnarrowed t)
+     ("d" "default" plain (function org-roam-capture--get-point)
+      "%?"
+      :file-name "%<%Y%m%d%H%M%S>-${slug}"
+      :head "#+TITLE: ${title}\n"
+      :unnarrowed t)
+     )
+
+   org-roam-ref-capture-templates
+   '(
+     ("r" "ref" plain (function org-roam-capture--get-point)
+      "%?"
+      :file-name "lit/${slug}"
+      :head "#+TITLE: ${title}
+#+ROAM_KEY: ${ref}
+#+ROAM_TAGS: website"
+      :unnarrowed t)
+     )
+   )
+  )
+
+;;
+;; Deft
+;;
 
 (use-package deft
   :after org
