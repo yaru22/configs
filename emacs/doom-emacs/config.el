@@ -70,6 +70,7 @@
                               (js . t)
                               (plantuml . t)
                               (python . t)
+                              (rust . t)
                               (sqlite . t)))
   :config
   ;; modules
@@ -85,7 +86,11 @@
         "M-p" #'outline-previous-visible-heading)
   (setq
    ;; agenda
-   org-agenda-files '("~/workspace/notes/")
+   org-agenda-files '(
+                      "~/workspace/notes/habits.org"
+                      "~/workspace/notes/projects.org"
+                      "~/workspace/notes/reviews.org"
+                      )
 
    ;; archive
    org-archive-reversed-order t
@@ -171,18 +176,6 @@
   (setq
    org-roam-capture-templates
    '(
-     ("a" "article" plain (function org-roam--capture-get-point)
-      "%?"
-      :file-name "articles/${slug}"
-      :head "#+TITLE: ${title}
-#+ROAM_KEY: ${url}
-#+ROAM_TAGS: website"
-      :unnarrowed t)
-     ("b" "book" plain (function org-roam--capture-get-point)
-      "%?"
-      :file-name "books/${slug}"
-      :head "#+TITLE: ${title}\n"
-      :unnarrowed t)
      ("d" "default" plain (function org-roam-capture--get-point)
       "%?"
       :file-name "%<%Y%m%d%H%M%S>-${slug}"
@@ -194,7 +187,7 @@
    '(
      ("r" "ref" plain (function org-roam-capture--get-point)
       "%?"
-      :file-name "lit/${slug}"
+      :file-name "articles/${slug}"
       :head "#+TITLE: ${title}
 #+ROAM_KEY: ${ref}
 #+ROAM_TAGS: website"
