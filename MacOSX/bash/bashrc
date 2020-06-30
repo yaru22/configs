@@ -12,6 +12,16 @@ export TERM="xterm-256color"
 source ~/.bash_aliases
 
 #
+# Custom Scripts
+#
+PATH=~/bin:$PATH
+
+#
+# Emacs
+#
+PATH=~/.emacs.d/bin:$PATH
+
+#
 # History
 #
 # No dup commands in history.
