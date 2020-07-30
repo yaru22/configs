@@ -1,3 +1,4 @@
+
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
@@ -70,8 +71,8 @@
                               (js . t)
                               (plantuml . t)
                               (python . t)
-                              (rust . t)
-                              (sqlite . t)))
+                              (sqlite . t)
+                              ))
   :config
   ;; modules
   (require 'org-checklist)
@@ -141,7 +142,7 @@
    org-log-done 'time
    org-log-into-drawer t
    org-log-note-clock-out nil
-   org-log-reschedule 'note
+   org-log-reschedule nil
 
    ;; misc
    org-src-window-setup 'current-window
@@ -166,31 +167,56 @@
 (use-package! org-roam
   :custom-face
   (org-roam-link ((t (:inherit org-link :foreground "#E95533"))))
+
   :init
   (setq
+   org-roam-buffer-width 0.25
    org-roam-directory "~/workspace/notes"
    org-roam-graph-viewer "/usr/bin/open"
+   org-roam-index-file "~/workspace/notes/index.org"
    org-roam-tag-sources '(prop last-directory)
    )
+
+  :bind (:map org-roam-mode-map
+         (
+          ("C-c n r j" . org-roam-jump-to-index)
+          )
+         )
+
   :config
   (setq
    org-roam-capture-templates
    '(
+     ("a" "article" plain (function org-roam--capture-get-point)
+      "%?"
+      :file-name "%<%Y%m%d%H%M%S>-${slug}"
+      :head "#+TITLE: ${title}
+#+ROAM_KEY: ${url}
+#+ROAM_TAGS: lit
+
+* Notes
+
+* Highlights
+"
+      :unnarrowed t)
      ("d" "default" plain (function org-roam-capture--get-point)
       "%?"
       :file-name "%<%Y%m%d%H%M%S>-${slug}"
       :head "#+TITLE: ${title}\n"
       :unnarrowed t)
      )
-
    org-roam-ref-capture-templates
    '(
      ("r" "ref" plain (function org-roam-capture--get-point)
       "%?"
-      :file-name "articles/${slug}"
+      :file-name "%<%Y%m%d%H%M%S>-${slug}"
       :head "#+TITLE: ${title}
 #+ROAM_KEY: ${ref}
-#+ROAM_TAGS: website"
+#+ROAM_TAGS: lit
+
+* Notes
+
+* Highlights"
       :unnarrowed t)
      )
    )
