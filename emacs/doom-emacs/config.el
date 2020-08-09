@@ -91,6 +91,7 @@
                       "~/workspace/notes/habits.org"
                       "~/workspace/notes/projects.org"
                       "~/workspace/notes/reviews.org"
+                      "~/workspace/notes/people.org"
                       )
 
    ;; archive
