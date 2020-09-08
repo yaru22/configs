@@ -25,10 +25,6 @@ alias gp='git pull'
 alias gs='git status'
 alias gd='git diff'
 
-# Julia was not available on brew yet as of writing this so installed it with
-# dmg.
-alias julia='/Applications/Julia.app/Contents/Resources/julia/bin/julia'
-
 alias ls='ls -hFG'
 alias l='ls -lF'
 alias ll='ls -alF'
