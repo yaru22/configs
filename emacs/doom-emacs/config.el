@@ -71,6 +71,7 @@
                               (js . t)
                               (plantuml . t)
                               (python . t)
+                              (sql . t)
                               (sqlite . t)
                               ))
   :config
@@ -130,6 +131,7 @@
       (file "~/workspace/notes/templates/yearly_review.org_tmpl")
       :jump-to-captured t)
      )
+   org-id-link-to-org-use-id 'create-if-interactive
 
    ;; export
    org-export-backends '(ascii beamer html icalendar latex md odt)
