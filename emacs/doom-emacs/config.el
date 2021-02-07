@@ -71,6 +71,7 @@
                               (js . t)
                               (plantuml . t)
                               (python . t)
+                              ;; (rust . t)
                               (sql . t)
                               (sqlite . t)
                               ))
@@ -181,9 +182,7 @@
    )
 
   :bind (:map org-roam-mode-map
-         (
-          ("C-c n r j" . org-roam-jump-to-index)
-          )
+         (("C-c n r j" . org-roam-jump-to-index))
          )
 
   :config
@@ -229,11 +228,19 @@
 ;; Deft
 ;;
 
-(use-package deft
+(use-package! deft
   :after org
   :custom
   (deft-recursive t)
   (deft-use-filter-string-for-filename t)
   (deft-default-extension "org")
   (deft-directory "~/workspace/notes")
+  )
+
+;;
+;; Ivy
+;;
+
+(use-package! ivy
+  :bind (("C-s" . swiper))
   )
