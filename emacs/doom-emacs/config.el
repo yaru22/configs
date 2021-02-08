@@ -64,17 +64,7 @@
    org-directory "~/workspace/notes"
    org-roam-directory "~/workspace/notes"
    org-attach-id-dir "~/workspace/notes/data"
-
-   ;; babel
-   org-babel-load-languages '((emacs-lisp . t)
-                              (dot . t)
-                              (js . t)
-                              (plantuml . t)
-                              (python . t)
-                              ;; (rust . t)
-                              (sql . t)
-                              (sqlite . t)
-                              ))
+   )
   :config
   ;; modules
   (require 'org-checklist)
