@@ -144,7 +144,7 @@
        (org
         +dragndrop
         +gnuplot
-        +pretty
+        +pretty          ; prettier bullets
         +roam)             ; organize your plain life in plain text
        ;;perl              ; write code no one else can comprehend
        ;;php               ; perl's insecure younger brother
