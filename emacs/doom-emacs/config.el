@@ -97,6 +97,10 @@
    ;; capture
    org-capture-templates
    '(
+     ("t" "Trading Journal" entry
+      (file+olp+datetree "~/workspace/notes/trading_journal.org")
+      (file "~/workspace/notes/templates/journal.org_tmpl")
+      :jump-to-captured t :empty-lines-after 1)
      ("j" "Journal" entry
       (file+olp+datetree "~/workspace/notes/journal.org")
       (file "~/workspace/notes/templates/journal.org_tmpl")
