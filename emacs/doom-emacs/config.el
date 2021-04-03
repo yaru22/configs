@@ -250,5 +250,5 @@
 ;;
 
 (use-package! ivy
-  :bind (("C-s" . swiper))
+  :bind (("C-s" . swiper-isearch))
   )
