@@ -62,7 +62,6 @@
   (setq
    ;; directories
    org-directory "~/workspace/notes"
-   org-roam-directory "~/workspace/notes"
    org-attach-id-dir "~/workspace/notes/data"
    )
   :config
@@ -100,11 +99,13 @@
      ("t" "Trading Journal" entry
       (file+olp+datetree "~/workspace/notes/trading_journal.org")
       (file "~/workspace/notes/templates/journal.org_tmpl")
-      :jump-to-captured t :empty-lines-after 1)
+      :empty-lines-after 1
+      :jump-to-captured t)
      ("j" "Journal" entry
       (file+olp+datetree "~/workspace/notes/journal.org")
       (file "~/workspace/notes/templates/journal.org_tmpl")
-      :jump-to-captured t :empty-lines-after 1)
+      :empty-lines-after 1
+      :jump-to-captured t)
      ("d" "Daily Review" entry
       (file+olp+datetree "~/workspace/notes/reviews.org" "Daily")
       (file "~/workspace/notes/templates/daily_review.org_tmpl")
@@ -117,7 +118,7 @@
       (file+olp+datetree "~/workspace/notes/reviews.org" "Monthly")
       (file "~/workspace/notes/templates/monthly_review.org_tmpl")
       :jump-to-captured t)
-     ("q" "Quarterly Review" entry
+     ("Q" "Quarterly Review" entry
       (file+olp+datetree "~/workspace/notes/reviews.org" "Quarterly")
       (file "~/workspace/notes/templates/quarterly_review.org_tmpl")
       :jump-to-captured t)
@@ -181,56 +182,71 @@
   (org-roam-link ((t (:inherit org-link :foreground "#E95533"))))
 
   :init
-  (setq
-   org-roam-buffer-width 0.25
-   org-roam-directory "~/workspace/notes"
-   org-roam-graph-viewer "/usr/bin/open"
-   org-roam-index-file "~/workspace/notes/index.org"
-   org-roam-tag-sources '(prop last-directory)
-   )
-
-  :bind (:map org-roam-mode-map
-         (("C-c n r j" . org-roam-jump-to-index))
-         )
+  (setq org-roam-v2-ack t)
+  (map! :leader
+        :prefix "n"
+        :desc "org-roam" "l" #'org-roam-buffer-toggle
+        :desc "org-roam-node-insert" "i" #'org-roam-node-insert
+        :desc "org-roam-node-find" "f" #'org-roam-node-find
+        :desc "org-roam-ref-find" "r" #'org-roam-ref-find
+        :desc "org-roam-show-graph" "g" #'org-roam-show-graph
+        :desc "org-roam-capture" "c" #'org-roam-capture
+        :desc "org-roam-dailies-capture-today" "j" #'org-roam-dailies-capture-today)
+  (setq org-roam-directory (file-truename "~/workspace/notes/")
+        org-roam-db-gc-threshold most-positive-fixnum
+        org-id-link-to-org-use-id t)
 
   :config
-  (setq
-   org-roam-capture-templates
-   '(
-     ("a" "article" plain (function org-roam--capture-get-point)
-      "%?"
-      :file-name "%<%Y%m%d%H%M%S>-${slug}"
-      :head "#+TITLE: ${title}
+  (setq org-roam-mode-sections
+        (list #'org-roam-backlinks-insert-section
+              #'org-roam-reflinks-insert-section
+              ;; #'org-roam-unlinked-references-insert-section
+              ))
+  (org-roam-setup)
+  (set-popup-rules!
+    `((,(regexp-quote org-roam-buffer) ; persistent org-roam buffer
+       :side right :width .33 :height .5 :ttl nil :modeline nil :quit nil :slot 1)
+      ("^\\*org-roam: " ; node dedicated org-roam buffer
+       :side right :width .33 :height .5 :ttl nil :modeline nil :quit nil :slot 2)))
+
+  (add-hook 'org-roam-mode-hook #'turn-on-visual-line-mode)
+
+  (setq org-roam-capture-templates
+        '(("a" "article" plain
+           "%?"
+           :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                              "#+TITLE: ${title}
 #+ROAM_KEY: ${url}
 #+ROAM_TAGS: lit
 
 * Notes
 
 * Highlights
-"
-      :unnarrowed t)
-     ("d" "default" plain (function org-roam-capture--get-point)
-      "%?"
-      :file-name "%<%Y%m%d%H%M%S>-${slug}"
-      :head "#+TITLE: ${title}\n"
-      :unnarrowed t)
-     )
-   org-roam-ref-capture-templates
-   '(
-     ("r" "ref" plain (function org-roam-capture--get-point)
-      "%?"
-      :file-name "%<%Y%m%d%H%M%S>-${slug}"
-      :head "#+TITLE: ${title}
+")
+                              :immediate-finish t
+                              :unnarrowed t)
+          ("d" "default" plain
+           "%?"
+           :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                              "#+TITLE: ${title}\n")
+           :immediate-finish t
+           :unnarrowed t)))
+
+  (setq org-roam-ref-capture-templates
+        '(("r" "ref" plain
+           "%?"
+           :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                              "#+TITLE: ${title}
 #+ROAM_KEY: ${ref}
 #+ROAM_TAGS: lit
 
 * Notes
 
-* Highlights"
-      :unnarrowed t)
-     )
-   )
-  )
+* Highlights
+")
+                              :immediate-finish t
+                              :unnarrowed t)))
+)
 
 ;;
 ;; Deft
