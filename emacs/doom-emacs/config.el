@@ -197,56 +197,59 @@
         org-id-link-to-org-use-id t)
 
   :config
-  (setq org-roam-mode-sections
-        (list #'org-roam-backlinks-insert-section
-              #'org-roam-reflinks-insert-section
-              ;; #'org-roam-unlinked-references-insert-section
+  (require 'org-roam-protocol)
+  ;; https://www.orgroam.com/manual.html#Configuring-what-is-displayed-in-the-buffer
+  (setq org-roam-mode-section-functions
+        (list #'org-roam-backlinks-section
+              #'org-roam-reflinks-section
+              ;; #'org-roam-unlinked-references-section
               ))
   (org-roam-setup)
   (set-popup-rules!
     `((,(regexp-quote org-roam-buffer) ; persistent org-roam buffer
-       :side right :width .33 :height .5 :ttl nil :modeline nil :quit nil :slot 1)
+       :side right
+       :width .33
+       :height .5
+       :ttl nil
+       :modeline nil
+       :quit nil
+       :slot 1)
       ("^\\*org-roam: " ; node dedicated org-roam buffer
-       :side right :width .33 :height .5 :ttl nil :modeline nil :quit nil :slot 2)))
+       :side right
+       :width .33
+       :height .5
+       :ttl nil
+       :modeline nil
+       :quit nil
+       :slot 2)))
 
   (add-hook 'org-roam-mode-hook #'turn-on-visual-line-mode)
 
   (setq org-roam-capture-templates
-        '(("a" "article" plain
-           "%?"
-           :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-                              "#+TITLE: ${title}
-#+ROAM_KEY: ${url}
-#+ROAM_TAGS: lit
-
-* Notes
-
-* Highlights
-")
-                              :immediate-finish t
-                              :unnarrowed t)
-          ("d" "default" plain
+        '(("d" "default" plain
            "%?"
            :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
                               "#+TITLE: ${title}\n")
            :immediate-finish t
            :unnarrowed t)))
 
-  (setq org-roam-ref-capture-templates
+  (setq org-roam-capture-ref-templates
         '(("r" "ref" plain
            "%?"
            :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-                              "#+TITLE: ${title}
-#+ROAM_KEY: ${ref}
-#+ROAM_TAGS: lit
+                              "
+#+TITLE: ${title}
+#+FILETAGS: lit
 
 * Notes
 
 * Highlights
+  * ${body}
 ")
-                              :immediate-finish t
-                              :unnarrowed t)))
-)
+           :immediate-finish t
+           :jump-to-captured t
+           :unnarrowed t)))
+  )
 
 ;;
 ;; Deft
