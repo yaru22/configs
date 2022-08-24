@@ -1,3 +1,22 @@
 Host *
   ServerAliveInterval 60
 
+#
+# https://carlosbecker.com/posts/ssh-tips-and-tricks/
+#
+
+# SSH straight into tmux
+# Host example.org
+#   RemoteCommand tmux new -A -s default
+#
+# Canonicalize hostnames
+# Host *
+#   CanonicalizeHostName yes
+#   CanonicalizeFallbackLocal yes
+#   CanonicalDomains mytld.foo.bar
+#
+# Alias commonly used hosts
+# Host ex
+#   HostName example.org
+#   User foo
+#   Port 2223
