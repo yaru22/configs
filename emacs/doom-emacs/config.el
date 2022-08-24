@@ -230,38 +230,29 @@
            "%?"
            :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
                               "#+TITLE: ${title}\n")
-           :immediate-finish t
+           :jump-to-captured t
+           :unnarrowed t)
+          ("b" "book" entry
+           (file "~/workspace/notes/templates/org_roam_capture_book.org_tmpl")
+           :if-new (file "~/workspace/notes/books.org")
+           :empty-lines-before 1
+           :jump-to-captured t
            :unnarrowed t)))
 
   (setq org-roam-capture-ref-templates
         '(("r" "ref" plain
-           "%?"
+           (file "~/workspace/notes/templates/org_roam_capture_ref.org_tmpl")
            :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-                              "
-#+TITLE: ${title}
-#+FILETAGS: lit
-
-* Notes
-
-* Highlights
-  * ${body}
-")
-           :immediate-finish t
+                              "#+TITLE: ${title}\n#+FILETAGS: :lit:")
            :jump-to-captured t
            :unnarrowed t)))
-  )
 
-;;
-;; Deft
-;;
-
-(use-package! deft
-  :after org
-  :custom
-  (deft-recursive t)
-  (deft-use-filter-string-for-filename t)
-  (deft-default-extension "org")
-  (deft-directory "~/workspace/notes")
+  (setq org-roam-dailies-capture-templates
+        '(("d" "default" entry "* %<%I:%M %p>\n  %?"
+           :if-new (file+head "%<%Y-%m-%d>.org"
+                              "#+TITLE: %<%Y-%m-%d>\n")
+           :jump-to-captured t
+           :unnarrowed t)))
   )
 
 ;;
