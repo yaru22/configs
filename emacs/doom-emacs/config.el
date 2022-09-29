@@ -50,9 +50,14 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
+
 ;;
-;; OrgMode
+;; Org Mode
 ;;
+
+;; disables autocompletion popup for org-mode
+;; https://discord.com/channels/406534637242810369/406554085794381833/1023912160373510144
+(setq company-global-modes '(not org-mode))
 
 (use-package! org
   :mode (("\\.org\\'" . org-mode)
@@ -173,6 +178,7 @@
     (set-face-attribute (car face) nil :height (cdr face)))
   )
 
+
 ;;
 ;; Org Roam
 ;;
@@ -255,6 +261,7 @@
            :unnarrowed t)))
   )
 
+
 ;;
 ;; Ivy
 ;;
@@ -262,3 +269,11 @@
 (use-package! ivy
   :bind (("C-s" . swiper-isearch))
   )
+
+
+;;
+;; Window Management
+;;
+
+(winner-mode 1)
+(windmove-default-keybindings)
