@@ -275,5 +275,10 @@
 ;; Window Management
 ;;
 
+(tab-bar-mode 1)
+(tab-bar-history-mode 1)
+(global-set-key (kbd "M-[") 'tab-bar-history-back)
+(global-set-key (kbd "M-]") 'tab-bar-history-forward)
+
 (winner-mode 1)
 (windmove-default-keybindings)

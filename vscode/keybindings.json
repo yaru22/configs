@@ -1,0 +1,23 @@
+[
+  {
+    "key": "cmd+shift+r",
+    "command": "workbench.action.tasks.runTask",
+    "args": "run"
+  },
+  {
+    "key": "cmd+shift+t",
+    "command": "workbench.action.tasks.runTask",
+    "args": "test"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-expandLineSelection",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-expandLineSelection",
+    "when": "editorFocus"
+  }
+]
+

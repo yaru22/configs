@@ -34,6 +34,11 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
 #
+# Flutter
+#
+PATH=~/workspace/flutter/bin:$PATH
+
+#
 # Git
 #
 # NOTE: brew install git bash-completion
@@ -71,22 +76,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 #
-# Python
+# Perl
 #
-# pip should only run if there is a virtualenv currently activated
-export PIP_REQUIRE_VIRTUALENV=true
-syspip() {
-  PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
-}
-export WORKON_HOME=~/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-source /usr/local/bin/virtualenvwrapper.sh
+PATH="/Users/brianpark/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/brianpark/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/brianpark/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/brianpark/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/brianpark/perl5"; export PERL_MM_OPT;
 
 #
-# RabbitMQ
+# Wasmer
 #
-# NOTE: brew install rabbitmq
-PATH=$PATH:/usr/local/sbin
+export WASMER_DIR="/Users/brianpark/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 
 #
 # Yarn
@@ -107,4 +109,21 @@ fi
 # NOTE: brew install direnv
 # NOTE: The following has to be placed at the end of bash_profile.
 eval "$(direnv hook bash)"
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#
+# Bun
+#
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
+#
+# pnpm
+#
+export PNPM_HOME="/Users/brianpark/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 
