@@ -43,6 +43,8 @@
 	editor = vim 
 	pager = less -FRSX
 	whitespace = fix, -indent-with-non-tab, trailing-space, cr-at-eol
+	excludesfile = /Users/brianpark/workspace/configs/git/global_ignore
+	quotepath = off
 
 [difftool]
 	prompt = NO
