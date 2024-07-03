@@ -38,7 +38,7 @@ fi
 #
 source ~/.bash_colors
 # Non-printing character has to be wrapped in \[ and \].
-export PS1="\[${OnBlack}${Yellow}\][ \u@\H:\[${Green}\]\w\[${Yellow}\]\$(__git_ps1 \" \[${Purple}\]{\[${Cyan}\]%s\[${Purple}\]}\")\[${Yellow}\] ]\$\[${Rst}\] "
+export PS1="\[${Yellow}\][ \u@\H:\[${Green}\]\w\[${Yellow}\]\$(__git_ps1 \" \[${Purple}\]{\[${Cyan}\]%s\[${Purple}\]}\")\[${Yellow}\] ]\$\[${Rst}\] "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

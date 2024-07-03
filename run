@@ -12,6 +12,10 @@ cp $SCRIPT_DIR/ssh/config ~/.ssh/config
 echo "Copying .vimrc"
 cp $SCRIPT_DIR/vim/vimrc ~/.vimrc
 
+echo "Copying alacritty.toml"
+mkdir -p ~/.config/alacritty/
+cp $SCRIPT_DIR/alacritty/alacritty.toml ~/.config/alacritty/
+
 # Set global_ignore for Git
 echo "Configuring git's global_ignore"
 git config --global core.excludesfile $SCRIPT_DIR/git/global_ignore
