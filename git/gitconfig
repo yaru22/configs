@@ -14,6 +14,9 @@
 [apply]
 	whitespace=fix
 
+[branch]
+	sort = -committerdate
+
 [color]
 	diff = auto
 	status = auto
@@ -39,6 +42,9 @@
 	changed = green
 	untracked = cyan
 
+[column]
+	ui = auto
+
 [core]
 	editor = vim 
 	pager = less -FRSX
@@ -58,6 +64,12 @@
 
 [push]
 	default = tracking
+
+[rerere]
+	# REuse REcorded REsolution (https://youtu.be/aolI_Rz0ZqY?si=WszqP35ayD5yPj1z&t=902)
+	# Tell Git to remember this merge conflict and remember how I fixed it and
+	# keep that in memory so if I see it again, it can automatically fix it for me.
+	enabled = true
 
 [user]
 	name = Brian Park
