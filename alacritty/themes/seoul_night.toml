@@ -1,0 +1,31 @@
+# By Brian Park
+# Inspired by coolnight.toml
+
+# Default colors
+[colors.primary]
+background = '#011423'
+foreground = '#cbe0f0'
+
+[colors.cursor]
+text = "#011423"
+cursor = "#47ff9c"
+
+[colors.normal]
+black = "#214969"
+red = "#e52e2e"
+green = "#55cca1"
+yellow = "#ffe073"
+blue = "#0fc5ed"
+magenta = "#a277ff"
+cyan = "#248da7"
+white = "#c6c6c6"
+
+[colors.bright]
+black = "#214969"
+red = "#e52e2e"
+green = "#55cca1"
+yellow = "#ffe073"
+blue = "#0fc5ed"
+magenta = "#a277ff"
+cyan = "#248da7"
+white = "#fafafa"
