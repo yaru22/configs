@@ -47,10 +47,16 @@
 
 [core]
 	editor = vim 
-	pager = less -FRSX
+	pager = delta  # brew install git-delta
 	whitespace = fix, -indent-with-non-tab, trailing-space, cr-at-eol
 	excludesfile = /Users/brianpark/workspace/configs/git/global_ignore
 	quotepath = off
+
+[delta]
+	navigate = true    # use n and N to move between diff sections
+	# delta detects terminal colors automatically; set one of these to disable auto-detection
+	# dark = true
+	# light = true
 
 [difftool]
 	prompt = NO
@@ -61,6 +67,12 @@
 [grep]
 	extendRegexp = true
 	lineNumber = true
+
+[interactive]
+	diffFilter = delta --color-only
+
+[merge]
+	conflictstyle = zdiff3
 
 [push]
 	default = tracking
