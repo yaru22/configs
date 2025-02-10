@@ -53,7 +53,9 @@
 	quotepath = off
 
 [delta]
+	line-number = true
 	navigate = true    # use n and N to move between diff sections
+	side-by-side = true
 	# delta detects terminal colors automatically; set one of these to disable auto-detection
 	# dark = true
 	# light = true
@@ -87,3 +89,8 @@
 	name = Brian Park
 	email = yaru22@gmail.com
 
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
