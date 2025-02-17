@@ -2,6 +2,8 @@
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+mkdir -p ~/.config/
+
 # Copy the configuration files.
 echo "Copying .gitconfig"
 cp $SCRIPT_DIR/git/gitconfig ~/.gitconfig
@@ -12,9 +14,11 @@ cp $SCRIPT_DIR/ssh/config ~/.ssh/config
 echo "Copying .vimrc"
 cp $SCRIPT_DIR/vim/vimrc ~/.vimrc
 
-echo "Copying alacritty.toml"
-mkdir -p ~/.config/alacritty/
-cp $SCRIPT_DIR/alacritty/alacritty.toml ~/.config/alacritty/
+echo "Setting up Neovim"
+ln -s $SCRIPT_DIR/nvim ~/.config/
+
+echo "Setting up Alacritty"
+ln -s $SCRIPT_DIR/alacritty ~/.config/
 
 # Set global_ignore for Git
 echo "Configuring git's global_ignore"
