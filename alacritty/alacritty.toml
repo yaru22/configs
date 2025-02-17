@@ -1,6 +1,6 @@
 # See https://alacritty.org/config-alacritty.html
 
-import = [
+general.import = [
   # "~/.config/alacritty/themes/Cobalt2.toml",
   # "~/.config/alacritty/themes/Mariana.toml",
   # "~/.config/alacritty/themes/afterglow.toml",
@@ -149,3 +149,8 @@ opacity = 0.8
 
 option_as_alt = "Both"
 
+[font]
+# brew install font-meslo-lg-nerd-font
+normal.family = "MesloLGS Nerd Font Mono"
+
+size = 12
