@@ -19,6 +19,8 @@ alias ed='emacs --daemon'
 alias ec='emacsclient'
 alias eck="emacsclient -e '(kill-emacs)'"
 
+alias gemini="npx https://github.com/google-gemini/gemini-cli"
+
 alias gp='git pull'
 alias gs='git status'
 alias gd='git diff'
