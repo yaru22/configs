@@ -1,0 +1,30 @@
+services:
+  tailscale-ntfy:
+    image: tailscale/tailscale:latest
+    hostname: ntfy
+    container_name: ntfy-ts
+    environment:
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_HOSTNAME=ntfy
+    volumes:
+      - ./tailscale-data:/var/lib/tailscale
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    restart: unless-stopped
+
+  ntfy:
+    image: binwiederhier/ntfy
+    network_mode: service:tailscale-ntfy
+    command: serve
+    volumes:
+      - ./server.yml:/etc/ntfy/server.yml
+      - ./cache:/var/cache/ntfy
+      - ./lib:/var/lib/ntfy
+    environment:
+      - TZ=UTC
+    restart: unless-stopped
+    depends_on:
+      - tailscale-ntfy
