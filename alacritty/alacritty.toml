@@ -154,3 +154,11 @@ option_as_alt = "Both"
 normal.family = "MesloLGS Nerd Font Mono"
 
 size = 12
+
+[keyboard]
+bindings = [
+  { key = "Return", mods = "Shift", chars = "\u001b\r" },
+  { key = "B", mods = "Alt", chars = "\u001bb" },
+  { key = "F", mods = "Alt", chars = "\u001bf" }
+]
+
