@@ -62,6 +62,10 @@ vmap <C-c> :w !pbcopy<CR><CR>   " MacOSX specific copy
 "Do not redraw, when running macros.. lazyredraw
 set lz
 
+" For TypeScript and React files specifically, the default regex engine can be
+" slow. `re=0` allows Vim to automatically choose the best engine.
+set re=0
+
 "Set backspace
 set backspace=eol,start,indent
 
@@ -76,3 +80,4 @@ set showmatch
 
 "How many tenths of a second to blink
 set mat=2
+
