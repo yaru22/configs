@@ -1,0 +1,4 @@
+preferences {
+  alt_is_meta = true
+}
+

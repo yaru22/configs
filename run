@@ -1,26 +1,27 @@
 #!/bin/bash
 
+# This script uses GNU Stow to symlink configuration files to your home directory.
+# See https://www.gnu.org/software/stow/ for more information.
+
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$SCRIPT_DIR"
 
-mkdir -p ~/.config/
+# Detect OS
+OS="$(uname)"
 
-# Copy the configuration files.
-echo "Copying .gitconfig"
-cp $SCRIPT_DIR/git/gitconfig ~/.gitconfig
+# Common packages to stow
+PACKAGES="git nvim alacritty vim ssh psql octave gem asciinema"
 
-echo "Copying .ssh/config"
-cp $SCRIPT_DIR/ssh/config ~/.ssh/config
+if [ "$OS" == "Darwin" ]; then
+    echo "Detected macOS"
+    PACKAGES="$PACKAGES bash-macos iterm vscode sublime"
+elif [ "$OS" == "Linux" ]; then
+    echo "Detected Linux"
+    PACKAGES="$PACKAGES bash-ubuntu"
+fi
 
-echo "Copying .vimrc"
-cp $SCRIPT_DIR/vim/vimrc ~/.vimrc
+echo "Stowing packages: $PACKAGES"
+stow -t ~ $PACKAGES
 
-echo "Setting up Neovim"
-ln -s $SCRIPT_DIR/nvim ~/.config/
-
-echo "Setting up Alacritty"
-ln -s $SCRIPT_DIR/alacritty ~/.config/
-
-# Set global_ignore for Git
-echo "Configuring git's global_ignore"
-git config --global core.excludesfile $SCRIPT_DIR/git/global_ignore
-
+echo "Done! Note: Emacs configurations (emacs-bare, emacs-doom, etc.) are not stowed automatically."
+echo "To use one, e.g. Doom Emacs, run: stow -t ~ emacs-doom"
