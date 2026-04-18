@@ -48,7 +48,6 @@ fi
 
 export GIT_PS1_SHOWDIRTYSTATE="1"
 . ~/.git-prompt.sh
-# PATH=$HOME/workspace/configs/git/bin:$PATH
 
 #
 # Go Lang
@@ -63,45 +62,41 @@ PATH=$GOBIN:$PATH
 PATH=~/.cabal/bin:$PATH
 
 #
-# Java
-#
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-
-#
 # Node.js
 #
-export NODE_PATH=/usr/local/lib/node_modules:~/node_modules
-PATH=~/node_modules/.bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 #
+# Python / uv
+#
+if command -v uv &> /dev/null; then
+    eval "$(uv generate-shell-completion bash)"
+fi
+
+#
 # Perl
 #
-PATH="/Users/brianpark/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/Users/brianpark/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/brianpark/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/brianpark/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/brianpark/perl5"; export PERL_MM_OPT;
+if [ -d "$HOME/perl5" ]; then
+    export PATH="$HOME/perl5/bin${PATH:+:${PATH}}"
+    export PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+    export PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+    export PERL_MB_OPT="--install_base \"$HOME/perl5\""
+    export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"
+fi
 
 #
 # Wasmer
 #
-export WASMER_DIR="/Users/brianpark/.wasmer"
+export WASMER_DIR="$HOME/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 
 #
-# Yarn
+# Modern Shell Utilities (Zoxide, FZF)
 #
-PATH=$PATH:`yarn global bin`
-
-#
-# Z
-#
-# NOTE: brew install z
-if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
-  . `brew --prefix`/etc/profile.d/z.sh
-fi
+# brew install zoxide fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+command -v zoxide &> /dev/null && eval "$(zoxide init bash)"
 
 #
 # Direnv
