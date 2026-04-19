@@ -95,7 +95,10 @@ export WASMER_DIR="$HOME/.wasmer"
 # Modern Shell Utilities (Zoxide, FZF)
 #
 # brew install zoxide fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if [ -d "/usr/local/opt/fzf/shell" ]; then
+  source "/usr/local/opt/fzf/shell/completion.bash"
+  source "/usr/local/opt/fzf/shell/key-bindings.bash"
+fi
 command -v zoxide &> /dev/null && eval "$(zoxide init bash)"
 
 #
