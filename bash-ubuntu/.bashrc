@@ -14,6 +14,13 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 #
+# Devbox
+# Note: it has to come before common config as that needs devbox packages
+if [[ "$(whoami)" == *agent* ]] && command -v devbox &> /dev/null; then
+    eval "$(devbox global shellenv)"
+fi
+
+#
 # Common Config
 #
 [ -f ~/.bash_shared ] && . ~/.bash_shared
@@ -49,13 +56,6 @@ fi
 # Emacs Tramp Mode Support
 #
 [[ $TERM == "dumb" ]] && PS1='$ '
-
-#
-# Devbox
-#
-if [[ "$(whoami)" == *agent* ]] && command -v devbox &> /dev/null; then
-    eval "$(devbox global shellenv)"
-fi
 
 #
 # Direnv
