@@ -10,7 +10,7 @@ cd "$SCRIPT_DIR"
 OS="$(uname)"
 
 # Common packages to stow
-PACKAGES="git nvim alacritty vim ssh psql octave gem asciinema"
+PACKAGES="bash-common git nvim alacritty vim ssh psql octave gem asciinema"
 
 if [ "$OS" == "Darwin" ]; then
     echo "Detected macOS"
@@ -22,7 +22,7 @@ fi
 
 if [[ "$(whoami)" == *agent* ]]; then
     echo "Agent environment detected. Overwriting container bash configs..."
-    rm -f ~/.bashrc ~/.bash_aliases ~/.bash_profile ~/.profile
+    rm -f ~/.bashrc ~/.bash_aliases ~/.bash_profile ~/.profile ~/.bash_shared ~/.bash_shared_aliases
 fi
 
 echo "Stowing packages: $PACKAGES"
