@@ -20,6 +20,11 @@ elif [ "$OS" == "Linux" ]; then
     PACKAGES="$PACKAGES bash-ubuntu"
 fi
 
+if [[ "$(whoami)" == *agent* ]]; then
+    echo "Agent environment detected. Overwriting container bash configs..."
+    rm -f ~/.bashrc ~/.bash_aliases ~/.bash_profile ~/.profile
+fi
+
 echo "Stowing packages: $PACKAGES"
 stow -t ~ $PACKAGES
 

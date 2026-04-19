@@ -118,6 +118,13 @@ fi
 command -v zoxide &> /dev/null && eval "$(zoxide init bash)"
 
 #
+# Devbox
+#
+if [[ "$(whoami)" == *agent* ]] && command -v devbox &> /dev/null; then
+    eval "$(devbox global shellenv)"
+fi
+
+#
 # Direnv
 #
 eval "$(direnv hook bash)"
