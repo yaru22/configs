@@ -7,8 +7,10 @@ services:
       - TS_AUTHKEY=${TS_AUTHKEY}
       - TS_STATE_DIR=/var/lib/tailscale
       - TS_HOSTNAME=ntfy
+      - TS_SERVE_CONFIG=/tailscale/serve.json
     volumes:
       - ./tailscale-data:/var/lib/tailscale
+      - ./tailscale-config:/tailscale:ro
       - /dev/net/tun:/dev/net/tun
     cap_add:
       - NET_ADMIN
@@ -17,10 +19,11 @@ services:
 
   ntfy:
     image: binwiederhier/ntfy
+    container_name: ntfy-service
     network_mode: service:tailscale-ntfy
     command: serve
     volumes:
-      - ./server.yml:/etc/ntfy/server.yml
+      - ./server-config.yml:/etc/ntfy/server.yml
       - ./cache:/var/cache/ntfy
       - ./lib:/var/lib/ntfy
     environment:
