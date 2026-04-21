@@ -26,6 +26,13 @@ fi
 [ -f ~/.bash_shared ] && . ~/.bash_shared
 
 #
+# Agent Prompt
+#
+if [[ "$(whoami)" == *"agent"* ]]; then
+    export PS1="\[${IPurple}\][ 🤖 AGENT:\[${IGreen}\]\w\[${IPurple}\]\$(__git_ps1 \" \[${Purple}\]{\[${Cyan}\]%s\[${Purple}\]}\")\[${IPurple}\] ]\$\[${Rst}\] "
+fi
+
+#
 # Aliases
 #
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
