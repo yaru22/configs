@@ -30,6 +30,7 @@ fi
 #
 if [[ "$(whoami)" == *"agent"* ]]; then
     export PS1="\[${IPurple}\][ 🤖 AGENT:\[${IGreen}\]\w\[${IPurple}\]\$(__git_ps1 \" \[${Purple}\]{\[${Cyan}\]%s\[${Purple}\]}\")\[${IPurple}\] ]\$\[${Rst}\] "
+    eval "$(devbox global shellenv --preserve-path-stack)"
 fi
 
 #
