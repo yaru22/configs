@@ -1,0 +1,14 @@
+#byobu-prompt#
+for dir in \
+    "/usr/local/opt/byobu/share/byobu" \
+    "/opt/homebrew/opt/byobu/share/byobu" \
+    "/usr/local/share/byobu" \
+    "/usr/share/byobu" \
+    "/usr/local/Cellar/byobu"/*/share/byobu; do
+    if [ -r "$dir/profiles/bashrc" ]; then
+        . "$dir/profiles/bashrc"
+        break
+    fi
+done
+
+

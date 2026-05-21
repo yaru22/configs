@@ -10,7 +10,7 @@ cd "$SCRIPT_DIR"
 OS="$(uname)"
 
 # Common packages to stow
-PACKAGES="bash-common git nvim alacritty vim ssh psql octave gem asciinema"
+PACKAGES="bash-common git nvim alacritty byobu vim ssh psql octave gem asciinema"
 
 if [ "$OS" == "Darwin" ]; then
     echo "Detected macOS"
