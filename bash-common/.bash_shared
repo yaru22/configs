@@ -16,12 +16,12 @@ fi
 #
 # Custom Scripts
 #
-PATH=~/bin:$PATH
+export PATH="~/.local/bin:~/bin:$PATH"
 
 #
 # Emacs
 #
-PATH=~/.emacs.d/bin:$PATH
+export PATH=~/.emacs.d/bin:$PATH
 
 #
 # History
