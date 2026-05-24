@@ -1,4 +1,16 @@
 #
+# Helper Functions
+#
+path_prepend() {
+    if [ -d "$1" ]; then
+        case ":$PATH:" in
+            *":$1:"*) ;; # Already in PATH, do nothing
+            *) export PATH="$1:$PATH" ;;
+        esac
+    fi
+}
+
+#
 # Colorful Terminal
 #
 source ~/.bash_colors
@@ -14,14 +26,9 @@ if [ -f ~/.bash_shared_aliases ]; then
 fi
 
 #
-# Custom Scripts
-#
-export PATH="~/.local/bin:~/bin:$PATH"
-
-#
 # Emacs
 #
-export PATH=~/.emacs.d/bin:$PATH
+path_prepend "$HOME/.emacs.d/bin"
 
 #
 # History
@@ -56,4 +63,15 @@ command -v zoxide &> /dev/null && eval "$(zoxide init bash)"
 if command -v uv &> /dev/null; then
     eval "$(uv generate-shell-completion bash)"
 fi
+
+#
+# Rust
+#
+path_prepend "$HOME/.cargo/bin"
+
+#
+# Various bin/
+#
+path_prepend "$HOME/.local/bin"
+path_prepend "$HOME/bin"
 

@@ -3,5 +3,3 @@ alias power='pmset -g adapter'
 
 alias cwd='printf "%q" "$(pwd)" | pbcopy && echo "Copied current working directory to the clipboard"'
 
-alias gemini="npx @google/gemini-cli"
-

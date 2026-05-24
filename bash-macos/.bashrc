@@ -21,7 +21,7 @@ fi
 # Bun
 #
 export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
+path_prepend "$BUN_INSTALL/bin"
 
 #
 # Node.js
@@ -34,7 +34,7 @@ export NVM_DIR="$HOME/.nvm"
 # Perl
 #
 if [ -d "$HOME/perl5" ]; then
-    export PATH="$HOME/perl5/bin${PATH:+:${PATH}}"
+    path_prepend "$HOME/perl5/bin"
     export PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
     export PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
     export PERL_MB_OPT="--install_base \"$HOME/perl5\""
